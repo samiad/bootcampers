@@ -1,8 +1,7 @@
 class Bootcamper::MissionsController < ApplicationController
 
-def index
-
-end
-
+  def index
+    @missions = current_user.missions
+  end
 
 end
