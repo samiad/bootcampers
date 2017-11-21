@@ -1,0 +1,24 @@
+=> [[32m#<Mission:0x00005624f50a0dc8[0m
+  id: [1;34m1[0m,
+  project_id: [1;34m3[0m,
+  title: [31m[1;31m"[0m[31mFront End d'un CRM[1;31m"[0m[31m[0m,
+  description: [31m[1;31m"[0m[31mConception du Front end d'un CRM, 10 pages, components, etc[1;31m"[0m[31m[0m,
+  price: [1;34m20000[0m,
+  created_at: [1;34;4mTue[0m, [1;34m21[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m15[0m:[1;34m38[0m:[1;34m37[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m21[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m15[0m:[1;34m38[0m:[1;34m37[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Mission:0x00005624f50a0c60[0m
+  id: [1;34m2[0m,
+  project_id: [1;34m3[0m,
+  title: [31m[1;31m"[0m[31mBack d'un CRM[1;31m"[0m[31m[0m,
+  description: [31m[1;31m"[0m[31mConception des controllers d'un CRM, des routes, etc[1;31m"[0m[31m[0m,
+  price: [1;34m30000[0m,
+  created_at: [1;34;4mTue[0m, [1;34m21[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m15[0m:[1;34m38[0m:[1;34m37[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m21[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m15[0m:[1;34m38[0m:[1;34m37[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Mission:0x00005624f50a0a30[0m
+  id: [1;34m3[0m,
+  project_id: [1;34m3[0m,
+  title: [31m[1;31m"[0m[31mJavascript d'un CRM[1;31m"[0m[31m[0m,
+  description: [31m[1;31m"[0m[31mConception du javascript sur les pages d'un CRM[1;31m"[0m[31m[0m,
+  price: [1;34m10000[0m,
+  created_at: [1;34;4mTue[0m, [1;34m21[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m15[0m:[1;34m38[0m:[1;34m37[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mTue[0m, [1;34m21[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m15[0m:[1;34m38[0m:[1;34m37[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]
