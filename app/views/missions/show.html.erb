@@ -1,0 +1,16 @@
+<h1>Titre : <%= @mission.title %></h1>
+<%= link_to "Postuler", applies_path(@apply), class: "btn btn-primary" %>
+<p>Description : <%= @mission.description %></p>
+<p>Rémunération : <%= @mission.price %> €</p>
+<p>Compétence(s) requise(s) :
+  <% @mission.skills.each do |skill| %>
+    <%= skill.name.upcase %>
+  <% end %>
+</p>
+
+<h3><strong>Contexte du projet :</strong></h3>
+<p>Titre : <%= @mission.project.title %></p>
+<p>Description : <%= @mission.project.description %></p>
+<p>Category : <%= @mission.project.category %></p>
+<p>Budget total : <%= @mission.project.price %> €</p>
+<p>Date de livraison : <%= @mission.project.agreed_delivery_at.strftime("%d/%m/%Y") %></p>
