@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121095340) do
+ActiveRecord::Schema.define(version: 20171121145445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,11 +39,19 @@ ActiveRecord::Schema.define(version: 20171121095340) do
     t.index ["user_id"], name: "index_companies_on_user_id", using: :btree
   end
 
+  create_table "mission_skills", force: :cascade do |t|
+    t.integer  "skill_id"
+    t.integer  "mission_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mission_id"], name: "index_mission_skills_on_mission_id", using: :btree
+    t.index ["skill_id"], name: "index_mission_skills_on_skill_id", using: :btree
+  end
+
   create_table "missions", force: :cascade do |t|
     t.integer  "project_id"
     t.string   "title"
     t.text     "description"
-    t.string   "skills"
     t.integer  "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -61,7 +69,6 @@ ActiveRecord::Schema.define(version: 20171121095340) do
     t.string   "title"
     t.text     "description"
     t.string   "category"
-    t.string   "skills"
     t.integer  "price"
     t.date     "agreed_delivery_at"
     t.date     "signed_off_at"
@@ -72,6 +79,13 @@ ActiveRecord::Schema.define(version: 20171121095340) do
     t.datetime "updated_at",          null: false
     t.index ["company_id"], name: "index_projects_on_company_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -99,6 +113,8 @@ ActiveRecord::Schema.define(version: 20171121095340) do
   add_foreign_key "applies", "missions"
   add_foreign_key "applies", "users"
   add_foreign_key "companies", "users"
+  add_foreign_key "mission_skills", "missions"
+  add_foreign_key "mission_skills", "skills"
   add_foreign_key "missions", "projects"
   add_foreign_key "projects", "companies"
   add_foreign_key "projects", "users"
