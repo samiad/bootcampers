@@ -1,5 +1,6 @@
 Apply.destroy_all
 Mission.destroy_all
+Skill.destroy_all
 Project.destroy_all
 Company.destroy_all
 User.destroy_all
@@ -151,3 +152,25 @@ js = Mission.create!(
   )
 print "📅 "
 print "Missions created"
+
+print 'Creating 3 Applies...'
+pending = Apply.create!(
+  user: phil,
+  mission: front,
+  )
+print "📅 "
+
+accepted = Apply.create!(
+  user: phil,
+  mission: back,
+  accepted_at: DateTime.now + 5.day
+  )
+print "📅 "
+
+refused = Apply.create!(
+  user: phil,
+  mission: js,
+  declined_at: DateTime.now + 5.day
+  )
+print "📅 "
+print "Applies created"
