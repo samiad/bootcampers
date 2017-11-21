@@ -119,9 +119,9 @@ print "📅 "
 print "Projects created"
 
 print "Creating 3 Skills..."
-javascript = Skill.create!(name: "Javascript", color: "#75A623")
-rails = Skill.create(name: "Rails", color: '#D0021B')
-html_css = Skill.create(name: "Html/Css", color: '#709EF2')
+javascript = Skill.create!(name: "javascript", color: "#75A623")
+rails = Skill.create(name: "rails", color: '#D0021B')
+html_css = Skill.create(name: "html/Css", color: '#709EF2')
 print "Skills created"
 
 print 'Creating 3 Missions...'
