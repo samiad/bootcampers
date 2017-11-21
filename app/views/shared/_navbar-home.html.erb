@@ -1,0 +1,60 @@
+<div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.6) 50%), url("http://www.lavoixletudiant.com/wp-content/uploads/2016/09/developpeur.jpg");">
+<div class="navbar-home">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-home-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-home-right hidden-xs hidden-sm">
+
+    <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <%= link_to "Host", "#", class: "navbar-home-item navbar-home-link" %>
+      <%= link_to "Trips", "#", class: "navbar-home-item navbar-home-link" %>
+      <%= link_to "Messages", "#", class: "navbar-home-item navbar-home-link" %>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-home-item">
+        <div class="dropdown">
+          <%= image_tag "http://kitt.lehome.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-home-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-home-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Inscription"), new_user_registration_path, class: "navbar-home-item navbar-home-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-home-item navbar-home-link" %>
+      <%= link_to "Publier une mission", "#", class: "navbar-home-item btn-publish" %>
+    <% end %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-home-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-home-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
