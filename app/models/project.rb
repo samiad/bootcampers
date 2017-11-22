@@ -8,5 +8,4 @@ class Project < ApplicationRecord
   validates :budget, presence: true
   validates :request_delivery_at, presence: true
 
-  scope :finished, -> { where.not(delivered_at: nil).map(&:id) }
 end
