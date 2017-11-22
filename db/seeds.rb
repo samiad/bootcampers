@@ -5,7 +5,7 @@ Project.destroy_all
 Company.destroy_all
 User.destroy_all
 
-print 'Creating 1 Bootcamper...'
+print '///Creating 1 Bootcamper...///'
 phil = User.create!(
   first_name: "Philippe",
   last_name: "Despreaux",
@@ -41,9 +41,9 @@ valentin = User.create!(
   role: :client
   )
 print "👶 "
-print "Users created"
+print "///Users created///"
 
-print 'Creating 1 Company...'
+print '///Creating 1 Company...///'
 company = Company.create!(
   name: "Valentin Company",
   address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
@@ -54,9 +54,9 @@ company = Company.create!(
   user: valentin
   )
 print "📅 "
-print "Company created"
+print "///Company created///"
 
-print 'Creating 4 Projects...'
+print '///Creating 4 Projects...///'
 Project.create!(
   company: company,
   user: samia,
@@ -136,21 +136,30 @@ app = Project.create!(
   paid_off_at: DateTime.now + 2.month + 10.day
   )
 print "📅 "
-print "Projects created"
+print "///Projects created///"
 
-print "Creating 3 Skills..."
+print "///Creating 3 Skills...///"
 javascript = Skill.create!(name: "js", color: "#75A623")
 rails = Skill.create(name: "rails", color: '#D0021B')
 html_css = Skill.create(name: "html/css", color: '#709EF2')
-print "Skills created"
+print "///Skills created///"
 
-print 'Creating 4 Missions...'
+print '///Creating 5 Missions...///'
 front = Mission.create!(
+  project: crm,
+  title: "Front d'un CRM",
+  description: "Conception du Front end d'un CRM, 10 pages, components, etc",
+  skills: [html_css],
+  price: 20000
+  )
+print "📅 "
+
+frontend = Mission.create!(
   project: crm,
   title: "Front End d'un CRM",
   description: "Conception du Front end d'un CRM, 10 pages, components, etc",
   skills: [html_css],
-  price: 20000
+  price: 5000
   )
 print "📅 "
 
@@ -180,9 +189,9 @@ back_end = Mission.create!(
   price: 10000
   )
 print "📅 "
-print "Missions created"
+print "///Missions created///"
 
-print 'Creating 4 Applies...'
+print '///Creating 4 Applies...///'
 pending = Apply.create!(
   user: phil,
   mission: front,
@@ -209,4 +218,4 @@ accepted = Apply.create!(
   accepted_at: DateTime.now + 5.day
   )
 print "📅 "
-print "Applies created"
+print "///Applies created///"

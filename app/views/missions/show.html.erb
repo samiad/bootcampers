@@ -1,5 +1,9 @@
 <h1>Titre : <%= @mission.title %></h1>
-<%= link_to "Postuler", applies_path(@apply), class: "btn btn-primary" %>
+<%= simple_form_for @apply do |f| %>
+  <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
+  <%= f.button :submit, "Postuler",class: "btn btn-primary" %>
+<% end %>
+
 <p>Description : <%= @mission.description %></p>
 <p>Rémunération : <%= @mission.price %> €</p>
 <p>Compétence(s) requise(s) :
