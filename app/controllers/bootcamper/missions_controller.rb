@@ -1,7 +1,7 @@
 class Bootcamper::MissionsController < ApplicationController
 
   def index
-    @pending = Apply.pending
+    @pending = Apply.pending.map(&:mission_id)
     @finished = Project.finished
     @pending_missions = Mission.where(id: @pending, current_user)
     @finished_missions = Mission.where(project_id: @finished, current_user)

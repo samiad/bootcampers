@@ -2,9 +2,11 @@ class MissionsController < ApplicationController
   before_action :set_mission, only: :show
 
   def index
-    @pending = Apply.pending.where(user_id != current_user)
-    @no_apply = Mission.no_apply
-    @missions = Mission.where(id: @pending || @no_apply)
+    # Retrieve missions not yet applied for by anybody
+    @no_apply_missions = Mission.no_apply
+    # Retrieve pending missions of other bootcampers
+    @pending_missions = Mission.not_mine(current_user).pending
+    @missions = @no_apply_missions + @pending_missions
   end
 
   def show
