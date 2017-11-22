@@ -9,7 +9,9 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body class="application">
-    <%= render "shared/sidebar" %>
+    <% unless devise_controller? %>
+      <%= render "shared/sidebar" %>
+    <% end %>
     <div class="content">
       <%= render 'shared/flashes' %>
       <%= yield %>
