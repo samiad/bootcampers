@@ -5,7 +5,7 @@ Project.destroy_all
 Company.destroy_all
 User.destroy_all
 
-print '///Creating 1 Bootcamper...///'
+print '///Creating 2 Bootcamper...///'
 phil = User.create!(
   first_name: "Philippe",
   last_name: "Despreaux",
@@ -13,6 +13,17 @@ phil = User.create!(
   email: "bootcamper@bootcampers.com",
   password: "bootcamper",
   bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS.",
+  role: :bootcamper
+  )
+print "👶 "
+
+sylv = User.create!(
+  first_name: "Sylvain",
+  last_name: "Peigney",
+  phone_number: "55 55 55 55 55",
+  email: "sylvain@bootcampers.com",
+  password: "sylvain",
+  bio: "Je suis developer depuis plus de 10 ans et mes langages de prédilections sont Ruby, HTML et CSS.",
   role: :bootcamper
   )
 print "👶 "
@@ -45,7 +56,7 @@ print "///Users created///"
 
 print '///Creating 1 Company...///'
 company = Company.create!(
-  name: "Valentin Company",
+  name: "Val&Co",
   address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
   siret: "123 123 132 13205",
   activity_code: "553A",
@@ -191,7 +202,7 @@ back_end = Mission.create!(
 print "📅 "
 print "///Missions created///"
 
-print '///Creating 4 Applies...///'
+print '///Creating 8 Applies...///'
 pending = Apply.create!(
   user: phil,
   mission: front,
@@ -215,6 +226,33 @@ print "📅 "
 accepted = Apply.create!(
   user: phil,
   mission: back_end,
+  accepted_at: DateTime.now + 5.day
+  )
+print "📅 "
+
+pending = Apply.create!(
+  user: sylv,
+  mission: back_end,
+  )
+print "📅 "
+
+accepted = Apply.create!(
+  user: sylv,
+  mission: front,
+  accepted_at: DateTime.now + 5.day
+  )
+print "📅 "
+
+refused = Apply.create!(
+  user: sylv,
+  mission: back,
+  declined_at: DateTime.now + 5.day
+  )
+print "📅 "
+
+accepted = Apply.create!(
+  user: sylv,
+  mission: js,
   accepted_at: DateTime.now + 5.day
   )
 print "📅 "
