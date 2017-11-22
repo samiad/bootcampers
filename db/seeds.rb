@@ -13,7 +13,8 @@ phil = User.create!(
   email: "bootcamper@bootcampers.com",
   password: "bootcamper",
   bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS.",
-  role: :bootcamper
+  role: :bootcamper,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/philippe_kuh8vu.jpg"
   )
 print "👶 "
 
@@ -24,7 +25,8 @@ sylv = User.create!(
   email: "sylvain@bootcampers.com",
   password: "sylvain",
   bio: "Je suis developer depuis plus de 10 ans et mes langages de prédilections sont Ruby, HTML et CSS.",
-  role: :bootcamper
+  role: :bootcamper,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/sylvain_lv30rh.jpg"
   )
 print "👶 "
 
@@ -37,7 +39,8 @@ samia = User.create!(
   email: "samia@bootcampers.com",
   password: "samiad",
   bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS. Et je suis leader chez Bootcampers",
-  role: :leader
+  role: :leader,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/samia_kituxm.png"
   )
 print "👶 "
 
@@ -49,7 +52,8 @@ valentin = User.create!(
   email: "valentin@company.com",
   password: "company",
   bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
-  role: :client
+  role: :client,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/valentin_mmqlj2.jpg"
   )
 print "👶 "
 print "///Users created///"
@@ -62,7 +66,8 @@ company = Company.create!(
   activity_code: "553A",
   vat_number: "123456789TVA",
   website: "www.company.fr",
-  user: valentin
+  user: valentin,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/val-co_uqcre2.png"
   )
 print "📅 "
 print "///Company created///"
