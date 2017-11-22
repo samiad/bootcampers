@@ -1,0 +1,133 @@
+.cards-index {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-mission {
+  width: 240px;
+  height: 340px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 9px -1px black;
+  margin-top: 30px;
+}
+
+.background-blue {
+  background: #4A90E2;
+}
+
+.blue {
+  color: #4A90E2;
+}
+
+.card-mission-title {
+  width: 240px;
+  height: 60px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+
+  p {
+      margin: 0;
+  }
+}
+
+
+
+.card-mission-company-infos {
+  padding-top: 10px;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 14px -1px #3C78E7;
+  }
+}
+
+.card-mission-price-name {
+  height: 65px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-mission-price {
+  font-size: 25px;
+  font-weight: 300;
+  color: #4A90E2;
+}
+
+.card-mission-company-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #AEAEAE;
+}
+
+.card-mission-content {
+  padding-top: 25px;
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-mission-date {
+  height: 30px;
+  padding-left: 30px;
+  color: #AEAEAE;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center
+}
+
+.card-mission-description {
+  height: 160px;
+  padding-left: 30px;
+  padding-right: 25px;
+  color: #AEAEAE;
+  font-size: 14px;
+  font-weight: 200;
+  display: flex;
+  align-items: center
+}
+
+.card-mission-skills {
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.card-mission-js {
+  color: #F5A623;
+  font-size: 16px;
+}
+.card-mission-ruby {
+  color: #D0021B;
+  font-size: 16px;
+}
+.card-mission-html {
+  font-size: 16px;
+}
+.card-mission-css {
+  color: #00E04C;
+  font-size: 16px;
+}
+
+.container-fluid {
+  margin-top: 71px;
+}
