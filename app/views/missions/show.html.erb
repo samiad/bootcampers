@@ -5,6 +5,7 @@
     </div>
     <div class="card-show-quit">
 
+
     </div>
     <div class="card-show-content">
       <div class="card-show-infos">
@@ -30,7 +31,10 @@
           </div>
         </div>
         <div class="card-show-btn-apply">
-          <%= link_to "Postuler", applies_path(@apply), class: "btn btn-warning" %>
+          <%= simple_form_for @apply do |f| %>
+            <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
+            <%= f.button :submit, "Postuler",class: "btn btn-warning" %>
+          <% end %>
         </div>
       </div>
       <div class="card-show-description">

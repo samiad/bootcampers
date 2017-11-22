@@ -2,7 +2,9 @@ class MissionsController < ApplicationController
   before_action :set_mission, only: :show
 
   def index
-    @missions = Mission.all
+    @pending = Apply.pending.where(user_id != current_user)
+    @no_apply = Mission.no_apply
+    @missions = Mission.where(id: @pending || @no_apply)
   end
 
   def show
