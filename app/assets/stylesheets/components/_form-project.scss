@@ -1,0 +1,47 @@
+.form-project {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 5px;
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+.category-choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.category-choice {
+  // flex: 0 0 30%;
+  background: transparent;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid $lightgray;
+  font-size: 14px;
+  text-align: center;
+  &:hover {
+    background: rgba(112,158,242,0.1);
+    border: 1px solid $blue;
+    color: $blue;
+    cursor: pointer;
+  }
+  &.active {
+    background: rgba(112,158,242,0.4);
+    border: 1px solid $blue;
+    color: $blue;
+  }
+}
