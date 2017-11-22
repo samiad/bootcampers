@@ -1,11 +1,12 @@
 class Bootcamper::MissionsController < ApplicationController
 
   def index
-    @pending = Apply.pending.map(&:mission_id)
-    @finished = Project.finished
-    @pending_missions = Mission.where(id: @pending, current_user)
-    @finished_missions = Mission.where(project_id: @finished, current_user)
-    @ongoing_missions = Mission.where.not(id: @pending, project_id: @finished).where(current_user)
+    # Retrieve my pending missions
+    @pending_missions = Mission.mine(current_user).pending
+    # Retrieve my ongoing missions
+    @ongoing_missions = Mission.mine(current_user).accepted.not_delivered
+    # Retrieve my delivered missions
+    @delivered_missions = Mission.mine(current_user).delivered
   end
 
 end

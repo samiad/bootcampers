@@ -28,7 +28,7 @@
   </div>
 <% end %>
 <h3>Livré</h3>
-<% @finished_missions.each do |mission| %>
+<% @delivered_missions.each do |mission| %>
   <div class="mission-followup">
     <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
     <div class="items company"><%= mission.project.company.name %></div>
