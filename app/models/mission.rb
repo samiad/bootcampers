@@ -8,4 +8,6 @@ class Mission < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true, length: {minimum: 20}
   validates :price, presence: true
+
+  scope :no_apply, -> { joins(:applies).where(applies: {mission_id: nil}) }
 end
