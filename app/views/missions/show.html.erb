@@ -10,7 +10,12 @@
     <div class="card-show-content">
       <div class="card-show-infos">
         <div class="card-show-logo">
-          <img src="https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg" alt="logo" class="card-show-company-logo">
+          <% if @mission.project.company.photo? %>
+            <%= cl_image_tag @mission.project.company.photo.path, class: "card-show-company-logo", width: 120, height: 120, crop: :fill %>
+          <% else %>
+            <% avatar_url = "http://placehold.it/120x120" %>
+            <%= image_tag avatar_url, class: "card-show-company-logo"%>
+          <% end %>
         </div>
         <div class="card-show-details">
           <div class="card-show-company-name">
