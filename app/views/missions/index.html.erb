@@ -3,5 +3,21 @@
   <%= render 'shared/searchbar' %>
 </div>
 
+<div class="container-fluid">
+  <div class="row voffset3">
+    <% @missions.each do |mission| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
   <!-- index des mission-card -->
-  <%= render 'missions/card' %>
+        <%= render 'missions/card', mission: mission %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="mission-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>

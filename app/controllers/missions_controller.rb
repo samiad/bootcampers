@@ -9,6 +9,7 @@ class MissionsController < ApplicationController
 
   def show
     @apply = Apply.new
+    render layout: false
   end
 
   private

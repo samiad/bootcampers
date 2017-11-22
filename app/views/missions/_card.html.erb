@@ -1,42 +1,38 @@
-<div class="container-fluid">
-  <div class="row voffset3">
-    <% @missions.each do |mission| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="cards-index">
-          <!-- contenu de la card -->
-          <div class="card-mission">
-            <div class="card-mission-title background-blue">
-              <p><%= mission.title %></p>
-            </div>
-            <div class="card-mission-company-infos">
-              <img src="https://dcassetcdn.com/design_img/477551/105643/105643_3711538_477551_image.png" alt="">
-              <div class="card-mission-price-name">
-                <div class="card-mission-price blue">
-                  <%= number_with_delimiter( mission.price, delimiter: " ") %> €
-                </div>
-                <div class="card-mission-company-name">
-                  <%= mission.project.company.name %>
-                </div>
-               </div>
-            </div>
-            <div class="card-mission-content">
-              <div class="card-mission-date">
-                Date de livraison : <%= mission.project.agreed_delivery_at.strftime("%d/%m/%Y")  %>
-              </div>
-              <div class="card-mission-description">
-                <%= mission.description.first(50) %>...
-              </div>
-              <div class="card-mission-skills">
-                <% mission.skills.each do |skill| %>
-                  <div class="card-mission-skill">
-                    <%= skill.name.upcase %>
-                  </div>
-                <% end %>
-              </div>
-            </div>
+
+<div class="cards-index">
+  <!-- contenu de la card -->
+    <div class="card-mission">
+      <%= link_to mission_path(mission), data: {toggle: "modal", target: "#mission-modal"} do %>
+      <div class="card-mission-title background-blue">
+        <p><%= mission.title %></p>
+      </div>
+      <div class="card-mission-company-infos">
+        <img src="https://dcassetcdn.com/design_img/477551/105643/105643_3711538_477551_image.png" alt="">
+        <div class="card-mission-price-name">
+          <div class="card-mission-price blue">
+            <%= number_with_delimiter( mission.price, delimiter: " ") %> €
           </div>
+          <div class="card-mission-company-name">
+            <%= mission.project.company.name %>
+          </div>
+         </div>
+      </div>
+      <div class="card-mission-content">
+        <div class="card-mission-date">
+          Date de livraison : <%= mission.project.agreed_delivery_at.strftime("%d/%m/%Y")  %>
+        </div>
+        <div class="card-mission-description">
+          <%= mission.description.first(50) %>...
+        </div>
+        <div class="card-mission-skills">
+          <% mission.skills.each do |skill| %>
+            <div class="card-mission-skill">
+              <%= skill.name.upcase %>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <!-- fin du contenu de la card -->
 </div>

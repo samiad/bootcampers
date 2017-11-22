@@ -1,20 +1,55 @@
-<h1>Titre : <%= @mission.title %></h1>
-<%= simple_form_for @apply do |f| %>
-  <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
-  <%= f.button :submit, "Postuler",class: "btn btn-primary" %>
-<% end %>
+<div class="container-fluid">
+  <div class="card-show">
+    <div class="card-show-title">
+      <h1><%= @mission.title %></h1>
+    </div>
+    <div class="card-show-quit">
 
-<p>Description : <%= @mission.description %></p>
-<p>Rémunération : <%= @mission.price %> €</p>
-<p>Compétence(s) requise(s) :
-  <% @mission.skills.each do |skill| %>
-    <%= skill.name.upcase %>
-  <% end %>
-</p>
 
-<h3><strong>Contexte du projet :</strong></h3>
-<p>Titre : <%= @mission.project.title %></p>
-<p>Description : <%= @mission.project.description %></p>
-<p>Category : <%= @mission.project.category %></p>
-<p>Budget total : <%= @mission.project.price %> €</p>
-<p>Date de livraison : <%= @mission.project.agreed_delivery_at.strftime("%d/%m/%Y") %></p>
+    </div>
+    <div class="card-show-content">
+      <div class="card-show-infos">
+        <div class="card-show-logo">
+          <img src="https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg" alt="logo" class="card-show-company-logo">
+        </div>
+        <div class="card-show-details">
+          <div class="card-show-company-name">
+            <p><%= @mission.project.company.name %></p>
+          </div>
+          <div class="card-show-price">
+            <p>Rémunération : <%= @mission.price %> €</p>
+          </div>
+          <div class="card-show-date">
+            <p>Date de livraison : <%= @mission.project.agreed_delivery_at.strftime("%d/%m/%Y") %></p>
+          </div>
+          <div class="card-show-skills">
+            <p>Compétence(s) requise(s) :
+              <% @mission.skills.each do |skill| %>
+                <%= skill.name.upcase %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="card-show-btn-apply">
+          <%= simple_form_for @apply do |f| %>
+            <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
+            <%= f.button :submit, "Postuler",class: "btn btn-warning" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-show-description">
+        <h3><strong>Description de la mission :</strong></h3>
+        <p><%= @mission.project.description %></p>
+      </div>
+      <div class="card-show-project-infos">
+        <h3><strong>Contexte du projet :</strong></h3>
+        <p>Titre : <%= @mission.project.title %></p>
+        <p>Category : <%= @mission.project.category %></p>
+        <p>Budget total : <%= @mission.project.price %> €</p>
+      </div>
+      <div class="card-show-download">
+        Télécharger les documents
+      </div>
+    </div>
+  </div>
+</div>
