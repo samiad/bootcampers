@@ -10,9 +10,9 @@
     </div>
       <% if user_signed_in? %>
         <% if current_user.photo? %>
-          <%= cl_image_tag current_user.photo.path, class: "side-navbar-avatar", width: 70, height: 70, crop: :fill %>
+          <%= cl_image_tag current_user.photo.path, class: "side-navbar-avatar", width: 90, height: 90, crop: :fill %>
         <% else %>
-          <% avatar_url = "http://placehold.it/30x30" %>
+          <% avatar_url = "http://placehold.it/90x90" %>
           <%= image_tag avatar_url, class: "side-navbar-avatar"%>
         <% end %>
       <% end %>
