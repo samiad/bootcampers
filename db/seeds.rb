@@ -56,7 +56,7 @@ company = Company.create!(
 print "📅 "
 print "Company created"
 
-print 'Creating 3 Projects...'
+print 'Creating 4 Projects...'
 Project.create!(
   company: company,
   user: samia,
@@ -116,15 +116,35 @@ crm = Project.create!(
   paid_off_at: ""
   )
 print "📅 "
+
+app = Project.create!(
+  company: company,
+  user: samia,
+  request_title: "Création d'une app",
+  request_description:"App permettant de nettoyer notre emprunte carbone",
+  budget: 20000,
+  request_delivery_at: DateTime.now + 1.month,
+  accepted_at: DateTime.now - 1.day,
+  title: "Conception d'une Application Mobile",
+  description: "App permettant de nettoyer notre emprunte carbone",
+  category: "Application Mobile",
+  price: 21000,
+  agreed_delivery_at: DateTime.now + 2.month,
+  signed_off_at: DateTime.now + 3.day,
+  delivered_at: DateTime.now + 2.month,
+  scoped_at: DateTime.now,
+  paid_off_at: DateTime.now + 2.month + 10.day
+  )
+print "📅 "
 print "Projects created"
 
 print "Creating 3 Skills..."
-javascript = Skill.create!(name: "javascript", color: "#75A623")
+javascript = Skill.create!(name: "js", color: "#75A623")
 rails = Skill.create(name: "rails", color: '#D0021B')
 html_css = Skill.create(name: "html/css", color: '#709EF2')
 print "Skills created"
 
-print 'Creating 3 Missions...'
+print 'Creating 4 Missions...'
 front = Mission.create!(
   project: crm,
   title: "Front End d'un CRM",
@@ -151,9 +171,18 @@ js = Mission.create!(
   price: 10000
   )
 print "📅 "
+
+back_end = Mission.create!(
+  project: app,
+  title: "Back end d'une app mobile",
+  description: "Conception de la structure et dev du back end",
+  skills: [rails],
+  price: 10000
+  )
+print "📅 "
 print "Missions created"
 
-print 'Creating 3 Applies...'
+print 'Creating 4 Applies...'
 pending = Apply.create!(
   user: phil,
   mission: front,
@@ -171,6 +200,13 @@ refused = Apply.create!(
   user: phil,
   mission: js,
   declined_at: DateTime.now + 5.day
+  )
+print "📅 "
+
+accepted = Apply.create!(
+  user: phil,
+  mission: back_end,
+  accepted_at: DateTime.now + 5.day
   )
 print "📅 "
 print "Applies created"
