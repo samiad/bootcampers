@@ -7,7 +7,14 @@
         <p><%= mission.title %></p>
       </div>
       <div class="card-mission-company-infos">
-        <img src="https://dcassetcdn.com/design_img/477551/105643/105643_3711538_477551_image.png" alt="">
+        <% if mission.project.company.photo? %>
+          <%= cl_image_tag mission.project.company.photo.path, width: 80, height: 80, crop: :fill %>
+        <% else %>
+          <% avatar_url = "http://placehold.it/80x80" %>
+          <%= image_tag avatar_url %>
+        <% end %>
+
+
         <div class="card-mission-price-name">
           <div class="card-mission-price blue">
             <%= number_with_delimiter( mission.price, delimiter: " ") %> €
