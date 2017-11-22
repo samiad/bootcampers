@@ -7,5 +7,4 @@ class Project < ApplicationRecord
   validates :request_description, presence: true, length: {minimum: 20}
   validates :budget, presence: true
   validates :request_delivery_at, presence: true
-
 end
