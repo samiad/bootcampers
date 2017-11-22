@@ -1,15 +1,19 @@
 class AppliesController < ApplicationController
 
   def create
-    @apply = Apply.new(apply_params)
-    @apply.save
-    redirect_to bootcamper_missions_path(@apply)
+    @apply = current_user.applies.new(apply_params)
+
+    if @apply.save
+      redirect_to bootcamper_missions_path(@apply)
+    else
+      render 'missions/show'
+    end
   end
 
   private
 
   def apply_params
-    params.require(:apply).permit(:user_id, :mission_id)
+    params.require(:apply).permit(:mission_id)
   end
 
 
