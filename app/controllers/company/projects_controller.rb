@@ -1,12 +1,10 @@
 class Company::ProjectsController < ApplicationController
 
-def index
+  def index
+    @projects = Project.all
+  end
 
-end
+  def Show
 
-def Show
-
-end
-
-
+  end
 end

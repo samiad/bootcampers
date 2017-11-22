@@ -44,7 +44,7 @@ samia = User.create!(
   )
 print "👶 "
 
-print 'Creating 1 Client...'
+print 'Creating 2 Clients...'
 valentin = User.create!(
   first_name: "Valentin",
   last_name: "Ferron",
@@ -54,6 +54,17 @@ valentin = User.create!(
   bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
   role: :client,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/valentin_mmqlj2.jpg"
+  )
+print "👶 "
+
+jo = User.create!(
+  first_name: "Jo",
+  last_name: "Serafini",
+  phone_number: "88 88 88 88 88",
+  email: "jo@company.com",
+  password: "joseraf",
+  bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
+  role: :client,
   )
 print "👶 "
 print "///Users created///"
@@ -68,6 +79,17 @@ company = Company.create!(
   website: "www.company.fr",
   user: valentin,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/val-co_uqcre2.png"
+  )
+print "📅 "
+
+jocomp = Company.create!(
+  name: "Jo&Co",
+  address: "107 cours Balguerie Stuttenberg, 33300 Bordeaux",
+  siret: "123 123 155 13205",
+  activity_code: "554A",
+  vat_number: "123478989TVA",
+  website: "www.jocompany.fr",
+  user: jo,
   )
 print "📅 "
 print "///Company created///"
@@ -134,10 +156,10 @@ crm = Project.create!(
 print "📅 "
 
 app = Project.create!(
-  company: company,
+  company: jocomp,
   user: samia,
   request_title: "Création d'une app",
-  request_description:"App permettant de nettoyer notre emprunte carbone",
+  request_description:"App permettant de nettoyer notre empreinte carbone",
   budget: 20000,
   request_delivery_at: DateTime.now + 1.month,
   accepted_at: DateTime.now - 1.day,
@@ -235,9 +257,10 @@ accepted = Apply.create!(
   )
 print "📅 "
 
-pending = Apply.create!(
+declined = Apply.create!(
   user: sylv,
   mission: back_end,
+  declined_at: DateTime.now + 5.day
   )
 print "📅 "
 
