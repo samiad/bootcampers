@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <div class="background_blue">
+    <%= link_to root_path, class: "sidebar-logo" do %>
+      <%= image_tag "logo.png", class: "sidebar-logo" %>
+    <% end %>
+  </div>
+  <div class="components_rounded">
+    <div class="parameters">
+      <img src="https://cdn3.iconfinder.com/data/icons/ballicons-free/128/settings.png" alt="icon_parameters" class="icon_parameters">
+    </div>
+    <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "side-navbar-avatar" %>
+    <div class="notif">
+      <img src="https://lh3.googleusercontent.com/-n-SjRvHbxNgrOFz--C5De2EjqRpi8JIhzdP6T99MFpp7MyA1gy9EJKRf9r6n0DhtKA=w300" alt="icon_notif" class="icon_notif">
+    </div>
+  </div>
+  <div class="infos">
+    <div class="name">
+      <% if user_signed_in? %>
+      <h2><%= current_user.first_name %></h2>
+      <% end %>
+    </div>
+    <div class="statut">
+      <% if user_signed_in? %>
+      <p><%= current_user.last_name %></p>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="container_menu side_menu pullRight">
+    <%= link_to "Missions", missions_path %>
+    <%= link_to "Projets en cours", '#' %>
+    <%= link_to "Statistiques", '#' %>
+    <%= link_to "Documents", '#' %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <%= t(".sign_out", default: "Déconnexion") %>
+    <% end %>
+    </div>
+  </div>
+</div>
