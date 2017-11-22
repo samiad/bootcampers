@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :missions, only: [:index, :show]
-
-  resources :applies, only: :create do
-    resources :accepteds, module: :applies, only: :create
+  resources :missions, only: [:index, :show] do
+    resources :applies, only: :create, shallow: true do
+      resources :accepteds, module: :applies, only: :create
+    end
   end
 
   namespace :bootcamper do

@@ -31,10 +31,7 @@
           </div>
         </div>
         <div class="card-show-btn-apply">
-          <%= simple_form_for @apply do |f| %>
-            <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
-            <%= f.button :submit, "Postuler",class: "btn btn-warning" %>
-          <% end %>
+          <%= button_to "Postuler", mission_applies_path(@mission), class: "btn btn-warning" %>
         </div>
       </div>
       <div class="card-show-description">
