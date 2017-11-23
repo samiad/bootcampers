@@ -7,6 +7,6 @@
     <div class="items description"><%= request.request_description %></div>
     <div class="items budget"><%= request.budget %>€</div>
     <div class="items">A livrer le <%= request.request_delivery_at.strftime("%d %m %Y") %></div>
-    <% link_to "Accepter", "#", class: "btn btn-primary" %>
+    <%= button_to "Accepter", request_accepteds_path(request.id), class: "btn btn-primary" %>
   </div>
 <% end %>
