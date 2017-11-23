@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'
 
   resources :missions, only: [:index, :show] do
@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   namespace :company do
     resources :projects, only: [:index, :show]
   end
+
+
 end

@@ -1,0 +1,21 @@
+.content-form {
+  min-height: 100vh; /* 1 */
+	display: flex; /* 2 */
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    flex-grow: 1;
+    padding-top: 45px;
+  }
+}
+
+.content-form-footer {
+  width: 100%;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+  align-self: flex-end;
+  padding: 14px;
+  font-size: 14px;
+}
