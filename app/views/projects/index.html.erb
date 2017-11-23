@@ -1,0 +1,161 @@
+<div class="dash-projects">
+  <!-- Displays accepted requests if any -->
+  <div class="dash-step">
+    <% if @accepted.count > 0 %>
+      <div class="status">Accepté(s)
+      </div>
+      <div class="dash-content">
+        <% @accepted.each do |project| %>
+          <div class="project-followup">
+            <div class="category"><%= project.category %></div>
+            <div class="items pic">
+              <% if project.company.photo? %>
+                <%= cl_image_tag project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+              <% else %>
+                <% avatar_url = "http://placehold.it/40x40" %>
+                <%= image_tag avatar_url, class: "avatar sm" %>
+              <% end %>
+            </div>
+            <div class="items company"><%= project.company.name %></div>
+            <div class="items title">
+              <p><%= project.request_title %></p>
+              <p><%= project.request_description %></p>
+            </div>
+            <div class="items budget"><%= project.budget %>€</div>
+            <div class="items pdate"><%= project.request_delivery_at %></div>
+            <div class="items">Définir</div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h3>Aucun projet à définir</h3>
+    <% end %>
+  </div>
+  <!-- Displays scoped projects if any -->
+  <div class="dash-step">
+    <% if @scoped.count > 0 %>
+      <div class="status">Défini(s)
+      </div>
+      <div class="dash-content">
+        <% @scoped.each do |project| %>
+          <div class="project-followup">
+            <div class="category"><%= project.category %></div>
+            <div class="items pic">
+              <% if project.company.photo? %>
+                <%= cl_image_tag project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+              <% else %>
+                <% avatar_url = "http://placehold.it/40x40" %>
+                <%= image_tag avatar_url, class: "avatar sm" %>
+              <% end %>
+            </div>
+            <div class="items company"><%= project.company.name %></div>
+            <div class="items title">
+              <p><%= project.title %></p>
+              <p><%= project.description %></p>
+            </div>
+            <div class="items budget"><%= project.price %>€</div>
+            <div class="items pdate"><%= project.agreed_delivery_at %></div>
+            <div class="items">Définir</div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h3>Aucun projet à faire signer</h3>
+    <% end %>
+  </div>
+  <!-- Display ongoing projects -->
+  <div class="dash-step">
+    <% if @ongoing.count > 0 %>
+      <div class="status">En cours
+      </div>
+      <div class="dash-content">
+        <% @ongoing.each do |project| %>
+          <div class="project-followup">
+            <div class="category"><%= project.category %></div>
+            <div class="items pic">
+              <% if project.company.photo? %>
+                <%= cl_image_tag project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+              <% else %>
+                <% avatar_url = "http://placehold.it/40x40" %>
+                <%= image_tag avatar_url, class: "avatar sm" %>
+              <% end %>
+            </div>
+            <div class="items company"><%= project.company.name %></div>
+            <div class="items title">
+              <p><%= project.title %></p>
+              <p><%= project.description %></p>
+            </div>
+            <div class="items budget"><%= project.price %>€</div>
+            <div class="items pdate"><%= project.agreed_delivery_at %></div>
+            <div class="items">Définir</div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h3>Aucun projet à terminer</h3>
+    <% end %>
+  </div>
+  <!-- Display delivered projects -->
+  <div class="dash-step">
+    <% if @delivered.count > 0 %>
+      <div class="status">Terminé(s)
+      </div>
+      <div class="dash-content">
+        <% @delivered.each do |project| %>
+          <div class="project-followup">
+            <div class="category"><%= project.category %></div>
+            <div class="items pic">
+              <% if project.company.photo? %>
+                <%= cl_image_tag project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+              <% else %>
+                <% avatar_url = "http://placehold.it/40x40" %>
+                <%= image_tag avatar_url, class: "avatar sm" %>
+              <% end %>
+            </div>
+            <div class="items company"><%= project.company.name %></div>
+            <div class="items title">
+              <p><%= project.title %></p>
+              <p><%= project.description %></p>
+            </div>
+            <div class="items budget"><%= project.price %>€</div>
+            <div class="items pdate"><%= project.delivered_at %></div>
+            <div class="items">Définir</div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h3>Aucun projet terminé impayé</h3>
+    <% end %>
+  </div>
+  <!-- Display paid_off projects -->
+  <div class="dash-step">
+    <% if @paid_off.count > 0 %>
+      <div class="status">Réglé(s)
+      </div>
+      <div class="dash-content">
+        <% @paid_off.each do |project| %>
+          <div class="project-followup">
+            <div class="category"><%= project.category %></div>
+            <div class="items pic">
+              <% if project.company.photo? %>
+                <%= cl_image_tag project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+              <% else %>
+                <% avatar_url = "http://placehold.it/40x40" %>
+                <%= image_tag avatar_url, class: "avatar sm" %>
+              <% end %>
+            </div>
+            <div class="items company"><%= project.company.name %></div>
+            <div class="items title">
+              <p><%= project.title %></p>
+              <p><%= project.description %></p>
+            </div>
+            <div class="items budget"><%= project.price %>€</div>
+            <div class="items"><%= project.paid_off_at %></div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h3>Aucun projet à archiver</h3>
+    <% end %>
+  </div>
+</div>
