@@ -14,7 +14,7 @@ phil = User.create!(
   email: "bootcamper@bootcampers.co",
   password: "bootcamper",
   bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS.",
-  role: :bootcamper,
+  role: 0,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/philippe_kuh8vu.jpg"
   )
 print "👶 "
@@ -26,7 +26,7 @@ sylv = User.create!(
   email: "sylvain@bootcampers.co",
   password: "sylvain",
   bio: "Je suis developer depuis plus de 10 ans et mes langages de prédilections sont Ruby, HTML et CSS.",
-  role: :bootcamper,
+  role: 0,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/sylvain_lv30rh.jpg"
   )
 print "👶 "
@@ -40,7 +40,7 @@ aur = User.create!(
   email: "aurelien@bootcampers.co",
   password: "aurelien",
   bio: "Je suis developer sur ruby on rails depuis 2 ans et mes langages de prédilections sont Ruby, HTML et CSS. Et je suis leader chez Bootcampers",
-  role: :leader,
+  role: 1,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511530103/aurelien_etlwlw.jpg"
   )
 print "👶 "
@@ -52,7 +52,7 @@ samia = User.create!(
   email: "samia@bootcampers.co",
   password: "samiad",
   bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS. Et je suis leader chez Bootcampers",
-  role: :leader,
+  role: 1,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/samia_kituxm.png"
   )
 print "👶 "
@@ -66,7 +66,7 @@ valentin = User.create!(
   email: "valentin@company.co",
   password: "company",
   bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
-  role: :client,
+  role: 2,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/valentin_mmqlj2.jpg"
   )
 print "👶 "
@@ -78,7 +78,7 @@ jo = User.create!(
   email: "jo@company.co",
   password: "joseraf",
   bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
-  role: :client,
+  role: 2,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511530104/jo_u1gep2.png"
   )
 print "👶 "
