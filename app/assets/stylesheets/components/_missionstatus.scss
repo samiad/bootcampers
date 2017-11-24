@@ -1,5 +1,10 @@
+.wrapper {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
 .mission-followup {
-  width: 100%;
+  width: 98%;
   display: flex;
   height: 50px;
   align-items: center;
@@ -31,6 +36,7 @@
 .skill_list {
   width: 25%;
   margin: 0px;
+  font-weight: bold;
 }
 .request_title {
   width: 20%;
