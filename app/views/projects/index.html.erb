@@ -1,3 +1,4 @@
+<h1 style="text-align: center">Mes Projets</h1>
 <div class="dash-projects">
   <!-- Displays accepted requests if any -->
   <div class="dash-step">
@@ -22,7 +23,7 @@
               <p><%= project.request_description %></p>
             </div>
             <div class="items budget"><%= project.budget %>€</div>
-            <div class="items pdate"><%= project.request_delivery_at %></div>
+            <div class="items pdate"><%= project.request_delivery_at.strftime("%d %m %Y") %></div>
             <div class="items">Définir</div>
           </div>
         <% end %>
@@ -54,7 +55,7 @@
               <p><%= project.description %></p>
             </div>
             <div class="items budget"><%= project.price %>€</div>
-            <div class="items pdate"><%= project.agreed_delivery_at %></div>
+            <div class="items pdate"><%= project.agreed_delivery_at.strftime("%d %m %Y") %></div>
             <div class="items">Définir</div>
           </div>
         <% end %>
@@ -86,7 +87,7 @@
               <p><%= project.description %></p>
             </div>
             <div class="items budget"><%= project.price %>€</div>
-            <div class="items pdate"><%= project.agreed_delivery_at %></div>
+            <div class="items pdate"><%= project.agreed_delivery_at.strftime("%d %m %Y") %></div>
             <div class="items">Définir</div>
           </div>
         <% end %>
@@ -118,7 +119,7 @@
               <p><%= project.description %></p>
             </div>
             <div class="items budget"><%= project.price %>€</div>
-            <div class="items pdate"><%= project.delivered_at %></div>
+            <div class="items pdate"><%= project.delivered_at.strftime("%d %m %Y") %></div>
             <div class="items">Définir</div>
           </div>
         <% end %>

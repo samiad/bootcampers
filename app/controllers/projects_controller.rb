@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @scoped = @projects.scoped
     @ongoing = @projects.ongoing
     @delivered = @projects.delivered
-    @paid_off = @projects.where.not(signed_off_at: nil)
+    @paid_off = @projects.where.not(paid_off_at: nil)
   end
 
   def show
