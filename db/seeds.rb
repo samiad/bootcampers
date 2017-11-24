@@ -123,7 +123,7 @@ print '///Creating 6 Projects for Val&Co...///'
 print '///Creating Project request for VAL...///'
 Project.create!(
   company: company,
-  request_title: "Création d'un site / V",
+  request_title: "Création d'un site e-commerce / V",
   request_description:"Je voudrais un site pour vendre des chapeaux mexicains",
   budget: 3000,
   request_delivery_at: DateTime.now + 2.month,
