@@ -32,8 +32,8 @@
       <div class="company-project-scoped text-center">
         <div class="cpp-amount"><%= number_with_delimiter( (project.price / 2), delimiter: " ") %> €</div>
         <div class="card-btn-pay">
-            <%= button_to "Régler", "#", class: "btn btn-signed-off" %>
-            <!-- project_signedoffs_path(@project) -->
+            <%= link_to "Régler", "#", class: "btn btn-signed-off" %>
+            <!-- button_to project_signedoffs_path(@project) -->
         </div>
       </div>
     </div>

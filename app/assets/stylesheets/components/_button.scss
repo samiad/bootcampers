@@ -40,18 +40,23 @@
   background-color: $lightred;
   text-decoration: none;
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 15px 15px;
   color: white;
   font-weight: bolder;
   transition: 0.2s ease;
   margin-top: 10px;
 }
 
+.btn-signed-off:hover, .btn-paid-off:hover {
+  opacity: 0.8;
+  color: $white;
+}
+
 .btn-paid-off {
   background-color: $orange;
   text-decoration: none;
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 15px 15px;
   color: white;
   font-weight: bolder;
   transition: 0.2s ease;
