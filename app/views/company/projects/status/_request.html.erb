@@ -1,0 +1,24 @@
+<div class="card-company-project">
+  <div class="company-project-status">
+    <div class="backg-status" style="background-color: <%= project.status[:color] %>">
+      <div class="cp-status"><%= project.status[:label] %></div>
+    </div>
+  </div>
+  <div class="card-company-project-infos">
+    <div class="cppi-titles text-center titles-request">
+      <div class="cp-infos">Projet</div>
+      <div class="cp-created"><strong>Envoyé le</strong></div>
+    </div>
+    <div class="cppi-body body-request">
+      <div class="company-project">
+        <div class="cp-title"><strong>Titre : </strong><%= project.request_title %></div>
+        <div class="cp-budget"><strong>Budget : </strong><%= number_with_delimiter( project.budget, delimiter: " ") %> €</div>
+        <div class="cp-delivery"><strong>Date de livraison souhaitée : </strong><%= project.request_delivery_at.strftime("%d/%m/%Y") %></div>
+      </div>
+      <div class="company-project-created text-center">
+        <div class="cps-date"><%= project.created_at.strftime("%d/%m/%Y") %></div>
+      </div>
+    </div>
+  </div>
+</div>
+
