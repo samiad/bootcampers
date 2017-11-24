@@ -1,14 +1,15 @@
 .container {
-  width: auto;
+  width: 90%;
   color: $gray;
 }
 
 .projects-title {
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .card-company-project-infos {
-  width: 881px;
+  width: auto;
 }
 
 .cppi-titles, .cppi-body {
@@ -38,6 +39,11 @@
   margin-bottom: 20px;
   font-size: 14px;
 }
+
+.card-company-project:hover {
+  transform: scale(1.1)
+}
+
 
 .backg-status {
   text-decoration: none;
@@ -69,13 +75,14 @@
 }
 
 .cp-infos, .company-project {
-  width: 400px;
+  width: 350px;
 }
 
 .cp-accepted, .company-project-accepted, .cp-created, .company-project-created,
 .cp-scoped, .company-project-scoped, .cp-signedoff, .company-project-signedoff,
 .cp-paidoff, .company-project-paidoff, .cp-delivered, .company-project-delivered {
-  width: 220px;
+  width: 100px;
+  margin-left: 40px;
 }
 
 .leader-avatar {
