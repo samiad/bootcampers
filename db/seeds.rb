@@ -106,6 +106,7 @@ jocomp = Company.create!(
   vat_number: "123478989TVA",
   website: "www.jocompany.fr",
   user: jo,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511530948/jo-co_i3qvf4.png"
   )
 print "📅 "
 print "///Created Companies///"

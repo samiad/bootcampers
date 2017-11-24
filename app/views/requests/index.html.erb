@@ -2,7 +2,12 @@
   <h3>Demandes de projet</h3>
   <% @requests.each do |request| %>
     <div class="mission-followup">
-      <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
+      <% if request.company.photo? %>
+        <%= cl_image_tag request.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/40x40" %>
+        <%= image_tag avatar_url, class: "avatar sm" %>
+      <% end %>
       <div class="items company"><%= request.company.name %></div>
       <div class="items request_title"><%= request.request_title %></div>
       <div class="items description"><%= request.request_description %></div>
