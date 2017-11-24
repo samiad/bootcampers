@@ -1,7 +1,7 @@
 class Company::ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all
+    @projects = current_user.company.projects.all
   end
 
   def Show

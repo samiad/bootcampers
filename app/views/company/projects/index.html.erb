@@ -1,16 +1,6 @@
-<h1 class="text-align: center">Projets</h1>
-<h3>En approbation</h3>
-<% @projects.each do |project| %>
-  <div class="project-followup">
-    <div class="items title"><%= project.request_title %></div>
-    <% if project.user.photo? %>
-      <%= cl_image_tag project.user.photo.path, width: 40, height: 40, crop: :fill %>
-    <% else %>
-      <% avatar_url = "http://placehold.it/40x40" %>
-      <%= image_tag avatar_url %>
-    <% end %>
-    <div class="items leader"><%= project.user.first_name %></div>
-    <div class="items budget"><%= number_with_delimiter( project.budget, delimiter: " ") %> €</div>
-    <div class="items">Date de livraison souhaitée <%= project.request_delivery_at.strftime("%d/%m/%Y") %></div>
-  </div>
-<% end %>
+<div class="container">
+  <h1 class="projects-title">Projets en cours</h1>
+  <% @projects.each do |project| %>
+    <%= render "company/projects/status/#{project.status[:slug]}", project: project %>
+  <% end %>
+</div>

@@ -34,3 +34,26 @@
   text-decoration: none;
   color: white;
 }
+
+
+.btn-signed-off {
+  background-color: $lightred;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 15px 30px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-paid-off {
+  background-color: $orange;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 15px 30px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease;
+  margin-top: 10px;
+}
