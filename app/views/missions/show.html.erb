@@ -30,7 +30,9 @@
           <div class="card-show-skills">
             <p>Compétence(s) requise(s) :
               <% @mission.skills.each do |skill| %>
-                <%= skill.name.upcase %>
+                <div class="card-mission-skill" style="color: <%= skill.color %>">
+                  <%= skill.name.upcase %>
+                </div>
               <% end %>
             </p>
           </div>

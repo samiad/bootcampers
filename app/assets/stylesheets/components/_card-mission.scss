@@ -10,20 +10,24 @@
   height: 340px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 9px -1px black;
+  box-shadow: 0px 0px 9px -1px $gray;
   margin-top: 30px;
 
   a {
     text-decoration: none;
   }
+
+  :focus {
+    outline: none;
+  }
 }
 
 .background-blue {
-  background: #4A90E2;
+  background: $blue;
 }
 
 .blue {
-  color: #4A90E2;
+  color: $blue;
 }
 
 .card-mission-title {
@@ -33,6 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: white;
   font-size: 20px;
   font-weight: 100;
@@ -43,8 +48,7 @@
 }
 
 .card-mission-company-infos {
-  padding-top: 10px;
-  padding-left: 25px;
+  padding: 10px 10px 0px 15px;
   display: flex;
   align-items: center;
 
@@ -52,7 +56,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    box-shadow: 0px 0px 14px -1px #3C78E7;
+    box-shadow: 0px 0px 5px -1px $lightblue;
   }
 }
 
@@ -67,13 +71,13 @@
 .card-mission-price {
   font-size: 25px;
   font-weight: 300;
-  color: #4A90E2;
+  color: $blue;
 }
 
 .card-mission-company-name {
   font-size: 16px;
   font-weight: 400;
-  color: #AEAEAE;
+  color: $lightgray;
 }
 
 .card-mission-content {
@@ -86,8 +90,8 @@
 
 .card-mission-date {
   height: 30px;
-  padding-left: 30px;
-  color: #AEAEAE;
+  padding: 0px 10px 0px 20px;
+  color: $lightgray;
   font-size: 16px;
   font-weight: 800;
   display: flex;
@@ -96,9 +100,8 @@
 
 .card-mission-description {
   height: 160px;
-  padding-left: 30px;
-  padding-right: 25px;
-  color: #AEAEAE;
+  padding: 0px 10px 0px 20px;
+  color: $lightgray;
   font-size: 14px;
   font-weight: 200;
   display: flex;
@@ -113,6 +116,10 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-end;
+}
+
+.card-mission-skill {
+  font-weight: bold;
 }
 
 // .card-mission-js {
@@ -199,5 +206,5 @@
   height: 120px;
   width: 120px;
   border-radius: 50%;
-  box-shadow: 0px 0px 14px -1px #3C78E7;
+  box-shadow: 0px 0px 5px -1px $lightblue;
 }
