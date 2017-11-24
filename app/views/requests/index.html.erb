@@ -1,12 +1,14 @@
-<h3>Demandes de projet</h3>
-<% @requests.each do |request| %>
-  <div class="mission-followup">
-    <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
-    <div class="items company"><%= request.company.name %></div>
-    <div class="items request_title"><%= request.request_title %></div>
-    <div class="items description"><%= request.request_description %></div>
-    <div class="items budget"><%= request.budget %>€</div>
-    <div class="items">A livrer le <%= request.request_delivery_at.strftime("%d %m %Y") %></div>
-    <%= button_to "Accepter", request_accepteds_path(request.id), class: "btn btn-primary" %>
-  </div>
-<% end %>
+<div class="wrapper">
+  <h3>Demandes de projet</h3>
+  <% @requests.each do |request| %>
+    <div class="mission-followup">
+      <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
+      <div class="items company"><%= request.company.name %></div>
+      <div class="items request_title"><%= request.request_title %></div>
+      <div class="items description"><%= request.request_description %></div>
+      <div class="items budget"><%= request.budget %>€</div>
+      <div class="items">A livrer le <%= request.request_delivery_at.strftime("%d %m %Y") %></div>
+      <%= button_to "Accepter", request_accepteds_path(request.id), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
