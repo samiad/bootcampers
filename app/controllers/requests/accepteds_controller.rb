@@ -8,7 +8,7 @@ class Requests::AcceptedsController < ApplicationController
       if @accepted.save
         flash[:success] = "Congrats, project #{@accepted.title} is yours!"
         # Left redirect as a comment since action is not yet coded in projects controller
-        # redirect_to projects_path
+        redirect_to projects_path
       else
         flash[:error] = "Sorry, something went wrong"
       end
