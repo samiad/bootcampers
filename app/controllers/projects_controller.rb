@@ -1,21 +1,26 @@
 class ProjectsController < ApplicationController
 
-def index
+  def index
+    @projects = Project.where(user_id: current_user)
+    @accepted = @projects.accepted
+    @scoped = @projects.scoped
+    @ongoing = @projects.ongoing
+    @delivered = @projects.delivered
+    @paid_off = @projects.where.not(signed_off_at: nil)
+  end
 
-end
+  def show
 
-def show
+  end
 
-end
+  def new
+    @project = Project.new
+    # render layout: false
+  end
 
-def new
-  @project = Project.new
-  # render layout: false
-end
+  def create
 
-def create
-
-end
+  end
 
 
 end

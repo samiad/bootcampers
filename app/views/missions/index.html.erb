@@ -21,3 +21,10 @@
     </div>
   </div>
 </div>
+<%= content_for :after_js do %>
+  <script type="text/javascript">
+    $('body').on('hidden.bs.modal', '.modal', function() {
+      $(this).removeData('bs.modal');
+    });
+  </script>
+<% end %>
