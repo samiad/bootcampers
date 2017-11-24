@@ -164,7 +164,7 @@ print "Creating 2 missions project scoped "
 frontappm = Mission.create!(
   project: appm,
   title: "Front d'une app mobile",
-  description: "Conception du Front end d'une application mobile",
+  description: "Mission scoped, no applies...........",
   skills: [html_css, javascript],
   price: 30000
   )
@@ -173,14 +173,14 @@ print "📅 "
 backappm = Mission.create!(
   project: appm,
   title: "Back end d'une app mobile",
-  description: "Conception du Back end d'une application mobile",
+  description: "Mission scoped, no applies..............",
   skills: [rails],
   price: 30000
   )
 print "📅 "
 print "Created 2 missions project scoped "
 
-print '///Creating Project signed_off for VAL with 2 missions and 4 applies...///'
+print '///Creating Project signed_off for VAL with 2 missions...///'
 crm = Project.create!(
   company: company,
   user: samia,
@@ -203,7 +203,7 @@ print "Creating 2 missions project signed_off "
 frontcrm = Mission.create!(
   project: crm,
   title: "Front End d'un CRM",
-  description: "Conception du Front end d'un CRM, 10 pages, components, etc",
+  description: "Mission signed_off, no applies................",
   skills: [html_css, javascript],
   price: 20000
   )
@@ -212,40 +212,13 @@ print "📅 "
 backcrm = Mission.create!(
   project: crm,
   title: "Back End d'un CRM",
-  description: "Conception des controllers d'un CRM, des routes, etc",
+  description: "Mission signed_off, no applies..................",
   skills: [rails],
   price: 30000
   )
 print "📅 "
 print "Created 2 missions project signed_off "
 
-print "Creating 4 applies project signed_off "
-pending = Apply.create!(
-  user: phil,
-  mission: frontcrm,
-  )
-print "📅 "
-
-pending = Apply.create!(
-  user: sylv,
-  mission: frontcrm,
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: phil,
-  mission: backcrm,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: sylv,
-  mission: backcrm,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-print "Created 4 applies project signed_off "
 
 print '///Creating Project delivered_at for VAL with 2 missions and 4 applies...///'
 appw = Project.create!(
@@ -271,7 +244,7 @@ print "Creating 2 missions project delivered_at "
 frontappw = Mission.create!(
   project: appw,
   title: "Front End d'une application web",
-  description: "Conception du Front end d'une application web",
+  description: "Mission delivered................",
   skills: [html_css, javascript],
   price: 12000
   )
@@ -280,7 +253,7 @@ print "📅 "
 backappw = Mission.create!(
   project: appw,
   title: "Back End d'une application web",
-  description: "Conception du Back end d'une application web",
+  description: "Mission delivered................",
   skills: [rails],
   price: 18000
   )
@@ -342,7 +315,7 @@ print "Creating 2 missions project paid_off "
 frontplat = Mission.create!(
   project: plat,
   title: "Front End d'une application web",
-  description: "Conception du Front end d'une application web",
+  description: "Mission paid_off................",
   skills: [html_css, javascript],
   price: 12000
   )
@@ -351,7 +324,7 @@ print "📅 "
 backplat = Mission.create!(
   project: plat,
   title: "Back End d'une application web",
-  description: "Conception du Back end d'une application web",
+  description: "Mission paid_off....................",
   skills: [rails],
   price: 18000
   )
@@ -435,7 +408,7 @@ print "Creating 2 missions project scoped "
 frontappmjo = Mission.create!(
   project: appmjo,
   title: "Front d'une app mobile",
-  description: "Conception du Front end d'une application mobile",
+  description: "Mission scoped, no applies...........",
   skills: [html_css, javascript],
   price: 30000
   )
@@ -444,14 +417,14 @@ print "📅 "
 backappmjo = Mission.create!(
   project: appmjo,
   title: "Back end d'une app mobile",
-  description: "Conception du Back end d'une application mobile",
+  description: "Mission scoped, no applies.................",
   skills: [rails],
   price: 30000
   )
 print "📅 "
 print "Created 2 missions project scoped "
 
-print '///Creating Project signed_off for JO with 2 missions and 4 applies...///'
+print '///Creating Project signed_off for JO with 3 missions and 4 applies...///'
 crmjo = Project.create!(
   company: jocomp,
   user: aur,
@@ -470,27 +443,36 @@ crmjo = Project.create!(
   )
 print "Project signed_off created "
 
-print "Creating 2 missions project signed_off "
+print "Creating 3 missions project signed_off "
 frontcrmjo = Mission.create!(
   project: crmjo,
   title: "Front End d'un CRM",
-  description: "Conception du Front end d'un CRM, 10 pages, components, etc",
+  description: "Mission signed_off, with applies pending for S&P",
   skills: [html_css, javascript],
-  price: 20000
+  price: 15000
   )
 print "📅 "
 
 backcrmjo = Mission.create!(
   project: crmjo,
   title: "Back End d'un CRM",
-  description: "Conception des controllers d'un CRM, des routes, etc",
+  description: "Mission signed_off, with applies accepted for P and refused for S",
   skills: [rails],
-  price: 30000
+  price: 20000
   )
 print "📅 "
-print "Created 2 missions project signed_off "
 
-print "Creating 4 applies project signed_off "
+jscrmjo = Mission.create!(
+  project: crmjo,
+  title: "Back End d'un CRM",
+  description: "Mission signed_off, with applies accepted for S and refused for P",
+  skills: [javascript],
+  price: 15000
+  )
+print "📅 "
+print "Created 3 missions project signed_off "
+
+print "Creating 6 applies project signed_off "
 pending = Apply.create!(
   user: phil,
   mission: frontcrmjo,
@@ -516,7 +498,21 @@ refused = Apply.create!(
   declined_at: DateTime.now + 5.day
   )
 print "📅 "
-print "Created 4 applies project signed_off "
+
+accepted = Apply.create!(
+  user: sylv,
+  mission: jscrmjo,
+  accepted_at: DateTime.now + 5.day
+  )
+print "📅 "
+
+refused = Apply.create!(
+  user: phil,
+  mission: jscrmjo,
+  declined_at: DateTime.now + 5.day
+  )
+print "📅 "
+print "Created 6 applies project signed_off "
 
 print '///Creating Project delivered_at for JO with 2 missions and 4 applies...///'
 appwjo = Project.create!(
@@ -542,7 +538,7 @@ print "Creating 2 missions project delivered_at "
 frontappwjo = Mission.create!(
   project: appwjo,
   title: "Front End d'une application web",
-  description: "Conception du Front end d'une application web",
+  description: "Mission delivered......................",
   skills: [html_css, javascript],
   price: 12000
   )
@@ -551,7 +547,7 @@ print "📅 "
 backappwjo = Mission.create!(
   project: appwjo,
   title: "Back End d'une application web",
-  description: "Conception du Back end d'une application web",
+  description: "Mission delivered...........................",
   skills: [rails],
   price: 18000
   )
@@ -613,7 +609,7 @@ print "Creating 2 missions project paid_off "
 frontplatjo = Mission.create!(
   project: platjo,
   title: "Front End d'une application web",
-  description: "Conception du Front end d'une application web",
+  description: "Mission paid_off.....................",
   skills: [html_css, javascript],
   price: 12000
   )
@@ -622,7 +618,7 @@ print "📅 "
 backplatjo = Mission.create!(
   project: platjo,
   title: "Back End d'une application web",
-  description: "Conception du Back end d'une application web",
+  description: "Mission paid_off....................",
   skills: [rails],
   price: 18000
   )
