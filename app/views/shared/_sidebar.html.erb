@@ -34,9 +34,16 @@
 
   </div>
   <div class="container_menu side_menu pullRight">
-    <%= link_to "Missions", missions_path %>
-    <%= link_to "Demandes en cours", requests_path %>
-    <%= link_to "Projets en cours", '#' %>
+    <% if current_user.bootcamper? %>
+      <%= link_to "Annonces", missions_path %>
+      <%= link_to "Mes missions", bootcamper_missions_path %>
+    <% elsif current_user.client? %>
+      <%= link_to "Publier un projet", new_project_path %>
+      <%= link_to "Mes projets", company_projects_path %>
+    <% else current_user.leader? %>
+      <%= link_to "Demandes projets", requests_path %>
+      <%= link_to "Mes projets", projects_path %>
+    <% end %>
     <%= link_to "Statistiques", '#' %>
     <%= link_to "Documents", '#' %>
     <%= link_to destroy_user_session_path, method: :delete do %>
