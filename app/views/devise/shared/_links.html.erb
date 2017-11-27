@@ -3,11 +3,15 @@
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  Pas encore inscrit ? <%= link_to "Je créé mon compte", new_registration_path(resource_name) %><br />
+  <div class="under-link">
+    Pas encore inscrit ? <%= link_to "Je créé mon compte", new_registration_path(resource_name) %><br />
+  </div>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  Mot de passe oublié ? <%= link_to "Récupérer", new_password_path(resource_name) %><br />
+  <div class="under-link">
+    Mot de passe oublié ? <%= link_to "Récupérer", new_password_path(resource_name) %><br />  
+  </div>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

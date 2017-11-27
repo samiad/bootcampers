@@ -3,7 +3,7 @@ module ApplicationHelper
     session[:role] == "bootcamper"
   end
 
-  def company?
-    session[:role] == "company"
+  def client?
+    session[:role] == "client"
   end
 end

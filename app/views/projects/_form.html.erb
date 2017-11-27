@@ -20,6 +20,40 @@
           <h2>Your project</h2>
           <%= p.input :request_title, placeholder: "Création d'un site web" %>
           <%= p.input :request_description, placeholder: "Site responsive..." %>
+
+          <!-- Fake checkbox for category -->
+          <div class="form-group boolean optional project_landing_page">
+            <div class="category-choices">
+              <input value="0" type="hidden" name="project[landing_page]">
+
+              <div class="category-choice">
+                <label class="boolean optional" for="project_landing_page">
+                  <input class="hidden" type="checkbox" value="1" checked="checked" name="project[landing_page]" id="project_landing_page">
+                  Landing page
+                  <i class="fa fa-check"></i>
+                </label>
+              </div>
+
+              <div class="category-choice">
+                <label class="boolean optional" for="project_landing_page">
+                  <input class="hidden" type="checkbox" value="1" checked="checked" name="project[landing_page]" id="project_landing_page">
+                  Site vitrine
+                  <i class="fa fa-check"></i>
+                </label>
+              </div>
+
+              <div class="category-choice">
+                <label class="boolean optional" for="project_landing_page">
+                  <input class="hidden" type="checkbox" value="1" checked="checked" name="project[landing_page]" id="project_landing_page">
+                  Application
+                  <i class="fa fa-check"></i>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Fin des fake checkbox -->
+
+
           <%= p.input :budget, placeholder: "6.000 €" %>
           <%= p.input :request_delivery_at %>
           <%= p.submit "Publier la mission", class: "btn btn-warning" %>
