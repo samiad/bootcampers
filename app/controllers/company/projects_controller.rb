@@ -4,7 +4,8 @@ class Company::ProjectsController < ApplicationController
     @projects = current_user.company.projects.all
   end
 
-  def Show
-
+  def show
+    @project = Project.find(params[:id])
+    render layout: false
   end
 end

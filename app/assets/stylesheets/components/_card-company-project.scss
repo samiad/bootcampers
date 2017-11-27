@@ -3,50 +3,43 @@
   color: $gray;
 }
 
+.container a {
+    text-decoration: none;
+    color: $gray;
+    &:hover {
+      text-decoration: none;
+      color: $gray;
+    }
+    &:focus {
+      text-decoration: none;
+      color: $gray;
+    }
+  }
+
 .projects-title {
   font-size: 16px;
   margin-bottom: 20px;
 }
 
-.card-company-project-infos {
-  width: auto;
-}
-
-.cppi-titles, .cppi-body {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cppi-body {
-  align-items: center;
-}
-
-.cppi-titles {
-  margin-bottom: 10px;
-  font-weight: bolder;
-}
-
 .card-company-project {
   background-color: $white;
-  text-decoration: none;
   border-radius: 5px;
   transition: 0.2s ease;
   box-shadow: 0px 0px 5px -1px $lightgray;
   border: 1px;
-  height: 180px;
+  height: 80px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 14px;
 }
 
 .card-company-project:hover {
-  transform: scale(1.1)
+  transform: scale(1.05);
 }
 
 
 .backg-status {
-  text-decoration: none;
   border-radius: 5px 0px 0px 5px;
   color: white;
   font-weight: bolder;
@@ -54,7 +47,7 @@
   text-align: center;
   border: 1px;
   width: 150px;
-  height: 180px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,42 +55,26 @@
   font-size: 12px;
 }
 
-.leader, .company-project-payment, .company-project-dev, .company-project-finish {
-  text-align: center;
-}
-
-.company-project, .card-company-project-infos, {
-
-}
-
-.leader-infos, .leader {
-  width: 250px;
-}
-
-.cp-infos, .company-project {
-  width: 350px;
-}
-
-.cp-accepted, .company-project-accepted, .cp-created, .company-project-created,
-.cp-scoped, .company-project-scoped, .cp-signedoff, .company-project-signedoff,
-.cp-paidoff, .company-project-paidoff, .cp-delivered, .company-project-delivered {
-  width: 100px;
-  margin-left: 40px;
+.company-project-infos {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .leader-avatar {
   border-radius: 50px;
-  margin-bottom: 5px;
+  margin-right: 20px;
 }
 
-.titles-request, .body-request {
-  margin-left: 40px;
+.cp-title {
+  margin-right: 50px;
+  flex-grow: 1;
 }
 
-.card-btn-pay .btn {
-  font-weight: bolder;
-}
-
-.cpp-amount {
-  margin-bottom: 20px;
+.cp-btn-date {
+  display: flex;
+  justify-content: center;
+  width: 20%
 }
