@@ -1,38 +1,29 @@
-<div class="card-company-project">
-  <div class="company-project-status">
-    <div class="backg-status" style="background-color: <%= project.status[:color] %>">
-      <div class="cp-status"><%= project.status[:label] %></div>
-    </div>
-  </div>
-  <div class="card-company-project-infos">
-    <div class="cppi-titles text-center">
-      <div class="leader-infos">Manager Projet</div>
-      <div class="cp-infos">Projet</div>
-      <div class="cp-signedoff"><strong>Validé le</strong></div>
-    </div>
-    <div class="cppi-body">
-      <div class="leader">
-        <div class="leader-avatar">
-          <% if project.user.photo? %>
-            <%= cl_image_tag project.user.photo.path, class: "leader-avatar", width: 50, height: 50, crop: :fill %>
-          <% else %>
-            <% avatar_url = "http://placehold.it/50x50" %>
-            <%= image_tag avatar_url, class: "leader-avatar"%>
-          <% end %>
-        </div>
-        <div class="leader-name"><strong><%= project.user.first_name.capitalize %></strong></div>
-        <div class="leader-mail"><%= project.user.email %></div>
-        <div class="leader-phone"><%= project.user.phone_number %></div>
-      </div>
-      <div class="company-project">
-        <div class="cp-title"><strong>Titre : </strong><%= project.title %></div>
-        <div class="cp-budget"><strong>Prix : </strong><%= number_with_delimiter( project.price, delimiter: " ") %> €</div>
-        <div class="cp-delivery"><strong>Date de livraison : </strong><%= project.agreed_delivery_at.strftime("%d/%m/%Y") %></div>
-      </div>
-      <div class="company-project-signedoff text-center">
-        <div class="cpa-date"><%= project.signed_off_at.strftime("%d/%m/%Y") %></div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= link_to company_project_path(project), data: {toggle: "modal", target: "#project-modal"}, class: 'card-toggler' do %>
+  <div class="card-company-project">
 
+    <div class="company-project-status">
+      <div class="backg-status" style="background-color: <%= project.status[:color] %>">
+        <div class="cp-status"><%= project.status[:label] %></div>
+      </div>
+    </div>
+
+    <div class="company-project-infos">
+
+      <div class="leader-avatar">
+        <% if project.user.photo? %>
+          <%= cl_image_tag project.user.photo.path, class: "leader-avatar", width: 50, height: 50, crop: :fill %>
+        <% else %>
+          <% avatar_url = "http://placehold.it/50x50" %>
+          <%= image_tag avatar_url, class: "leader-avatar"%>
+        <% end %>
+      </div>
+
+      <div class="cp-title"><strong>Projet : </strong><%= project.title %></div>
+
+      <div class="cp-btn-date">
+        <div class="cp-date"><strong>Validé le </strong><%= project.signed_off_at.strftime("%d/%m/%Y") %></div>
+      </div>
+
+    </div>
+  </div>
+<% end %>

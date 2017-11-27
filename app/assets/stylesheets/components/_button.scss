@@ -35,43 +35,71 @@
   background-color: #407add;
 }
 
-
+/*buttons régler un projet */
 .btn-signed-off {
   background-color: $lightred;
   text-decoration: none;
   border-radius: 50px;
-  padding: 15px 15px;
+  padding: 10px 20px;
   color: white;
   font-weight: bolder;
-  transition: 0.2s ease;
-  margin-top: 10px;
+  transition: 0.2s ease-out;
+  font-size: 14px;
 }
 
 .btn-paid-off {
   background-color: $orange;
   text-decoration: none;
   border-radius: 50px;
-  padding: 15px 15px;
+  padding: 10px 20px;
   color: white;
   font-weight: bolder;
-  transition: 0.2s ease;
+  transition: 0.2s ease-out;
+  font-size: 14px;
+}
+
+.btn-signed-off-show {
+  background-color: $lightred;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease-out;
   margin-top: 10px;
 }
 
-.btn-accept-request {
+.btn-paid-off-show {
   background-color: $orange;
   text-decoration: none;
   border-radius: 50px;
   padding: 15px 15px;
   color: white;
   font-weight: bolder;
-  transition: 0.2s ease;
+  transition: 0.2s ease-out;
   margin-top: 10px;
 }
 
-.btn-signed-off:hover, .btn-paid-off:hover, .btn-accept-request:hover {
+.btn-signed-off:hover, .btn-paid-off:hover, .btn-signed-off-show:hover, .btn-paid-off-show:hover {
   opacity: 0.8;
   color: $white;
+  box-shadow: 2px 2px 2px $lightgray;
 }
 
+/*button accepter une demande */
+.btn-accept-request {
+  background-color: $orange;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease-out;
+  margin-top: 10px;
+}
 
+.btn-accept-request:hover {
+  opacity: 0.8;
+  color: $white;
+  box-shadow: 2px 2px 2px $lightgray;
+}

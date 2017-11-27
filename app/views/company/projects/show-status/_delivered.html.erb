@@ -1,0 +1,36 @@
+<div class="company-project-modal-title" style="background-color: <%= @project.status[:color] %>">
+  <div class="cpmt-title"><%= @project.title %></div>
+</div>
+<div class="company-project-modal-infos">
+  <div class="cpm-details">
+    <div class="cpm-description">
+      <div><strong>Description : </strong><%= @project.description %></div>
+      <div><strong>Prix : </strong><%= number_with_delimiter( @project.price, delimiter: " ") %>  €</div>
+      <div><strong>Date de livraison : </strong><%= @project.agreed_delivery_at.strftime("%d/%m/%Y") %></div>
+    </div>
+    <div class="cpm-amount">
+      <div class="state-amount"><strong>Reste à régler</strong></div>
+      <div><%= number_with_delimiter( (project.price / 2), delimiter: " ") %> €</div>
+      <div class="card-btn-pay">
+        <%= button_to "Régler","#", class: "btn btn-paid-off-show" %>
+            <!-- button_to project_paiddoffs_path(@project) -->
+      </div>
+    </div>
+  </div>
+  <div class="cpm-leader-title text-center">Manager Projet</div>
+  <div class="cpm-leader-infos">
+    <div class="cpm-leader-avatar">
+      <% if @project.user.photo? %>
+        <%= cl_image_tag @project.user.photo.path, class: "cpm-leader-avatar", width: 100, height: 100, crop: :fill %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/100x100" %>
+        <%= image_tag avatar_url, class: "cpm-leader-avatar"%>
+      <% end %>
+    </div>
+    <div class="cpm-leader-details text-center">
+      <div><strong><%= @project.user.first_name.capitalize %></strong></div>
+      <div><%= @project.user.email %></div>
+      <div><%= @project.user.phone_number %></div>
+    </div>
+  </div>
+</div>

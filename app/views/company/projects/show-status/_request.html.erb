@@ -1,0 +1,16 @@
+<div class="company-project-modal-title" style="background-color: <%= @project.status[:color] %>">
+  <div class="cpmt-title"><%= @project.request_title %></div>
+</div>
+<div class="company-project-modal-infos">
+  <div class="cpm-details">
+    <div class="cpm-description">
+      <div><strong>Description : </strong><%= @project.request_description %></div>
+      <div><strong>Budget : </strong><%= number_with_delimiter( @project.budget, delimiter: " ") %>  €</div>
+      <div><strong>Date de livraison souhaitée : </strong><%= @project.request_delivery_at.strftime("%d/%m/%Y") %></div>
+    </div>
+    <div class="cpm-date">
+      <div class="state-date"><strong>Envoyé le</strong></div>
+      <div><%= @project.created_at.strftime("%d/%m/%Y") %></div>
+    </div>
+  </div>
+</div>
