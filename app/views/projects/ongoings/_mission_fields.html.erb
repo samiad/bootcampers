@@ -1,0 +1,9 @@
+<div class="nested-fields">
+  <%= f.input :title, label: "Titre" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.input :price, label: "Rémunération" %>
+
+  <%= f.check_box :_destroy %>
+
+  <%= link_to_remove_association "Oter la mission", f %>
+</div>

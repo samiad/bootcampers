@@ -20,6 +20,8 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+# to manage dynamic nested forms
+gem 'cocoon'
 
 group :development, :test do
   gem 'pry-byebug'

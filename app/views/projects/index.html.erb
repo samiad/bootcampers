@@ -24,7 +24,7 @@
             </div>
             <div class="items budget"><%= project.budget %>€</div>
             <div class="items pdate"><%= project.request_delivery_at.strftime("%d %m %Y") %></div>
-            <div class="items">Définir</div>
+            <%= link_to "Définir", new_project_ongoing_path(project), class: "items btn btn-primary" %>
           </div>
         <% end %>
       </div>
