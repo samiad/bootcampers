@@ -24,7 +24,7 @@
     <% if company? %>
       Vous êtes un bootcamper ? <%= link_to "Connectez-vous", new_user_session_path(as: :bootcamper) %>
     <% else %>
-      Vous êtes une entreprise ? <%= link_to "Connectez-vous", new_user_session_path(as: :company) %>
+      Vous êtes une entreprise ? <%= link_to "Connectez-vous", new_user_session_path(as: :client) %>
     <% end %>
   </div>
 </div>
