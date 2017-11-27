@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @company = current_user.company || Company.new
+    # render layout: false
   end
 
   def create

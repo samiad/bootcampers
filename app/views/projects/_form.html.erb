@@ -5,21 +5,21 @@
         <h1>Publiez une mission</h1>
         <%= simple_form_for @project do |p| %>
           <% if @company.persisted? %>
-            <h2>Your company : <%= @company.name %></h2>
+            <h2>Votre entreprise est : <%= @company.name %></h2>
           <% else %>
             <%= p.simple_fields_for @company do |c| %>
-              <h2>Your company</h2>
-              <%= c.input :name %>
-              <%= c.input :siret %>
-              <%= c.input :vat_number %>
-              <%= c.input :address %>
-              <%= c.input :activity_code %>
-              <%= c.input :website %>
+              <h2>Informations concernant votre entreprise :</h2>
+              <%= c.input :name, label: false, placeholder: "Nom de votre entreprise" %>
+              <%= c.input :siret, label: false, placeholder: "SIRET" %>
+              <%= c.input :vat_number, label: false, placeholder: "Numéro de TVA" %>
+              <%= c.input :address, label: false, placeholder: "Adresse complète" %>
+              <%= c.input :activity_code, label: false, placeholder: "Nom de votre entreprise" %>
+              <%= c.input :website, label: false, placeholder: "Site internet de votre entreprise" %>
             <% end  %>
           <% end  %>
-          <h2>Your project</h2>
-          <%= p.input :request_title, placeholder: "Création d'un site web" %>
-          <%= p.input :request_description, placeholder: "Site responsive..." %>
+          <h2>Votre projet :</h2>
+          <%= p.input :request_title, placeholder: "Création d'un site web", label: false, placeholder: "Titre de votre projet" %>
+          <%= p.input :request_description, placeholder: "Site responsive...", label: false, placeholder: "Description de votre projet"%>
 
           <!-- Fake checkbox for category -->
           <div class="form-group boolean optional project_landing_page">
@@ -53,9 +53,9 @@
           </div>
           <!-- Fin des fake checkbox -->
 
-
-          <%= p.input :budget, placeholder: "6.000 €" %>
-          <%= p.input :request_delivery_at %>
+          <%= p.input :budget, label: false, placeholder: "Votre budget" %>
+          <h3>Date de livraison souhaitée :</h3>
+          <%= p.input :request_delivery_at, label: false %>
           <%= p.submit "Publier la mission", class: "btn btn-warning" %>
         <% end %>
       </div>
