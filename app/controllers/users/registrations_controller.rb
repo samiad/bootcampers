@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     if resource.leader?
       chut_path
-    elsif resource.company?
+    elsif resource.client?
       new_project_path
     else
       bootcamper_path
@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_in_path_for(resource)
     if resource.leader?
       projects_path
-    elsif resource.company?
+    elsif resource.client?
       new_project_path
     elsif resource.bootcamper?
       missions_path
