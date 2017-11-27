@@ -3,9 +3,9 @@ class MissionsController < ApplicationController
 
   def index
     # Retrieve missions not yet applied for by anybody
-    @no_apply_missions = Mission.no_apply
+    @no_apply_missions = Mission.signed.no_apply
     # Retrieve pending missions of other bootcampers
-    @pending_missions = Mission.not_mine(current_user).pending
+    @pending_missions = Mission.where.not(id: current_user.missions).pending
     @missions = @no_apply_missions + @pending_missions
   end
 

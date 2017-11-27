@@ -1,43 +1,60 @@
 <h1 style="text-align: center">Mes missions</h1>
-<h3>En attente</h3>
-<% @pending_missions.each do |mission| %>
-  <div class="mission-followup">
-    <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
-    <div class="items company"><%= mission.project.company.name %></div>
-    <div class="items title"><%= mission.title %></div>
-    <div class="skill_list items">
-      <% mission.skills.each do |skill| %>
-        <span style="color: <%= skill.color %>;"><%= skill.name %></span>
+<div class="wrapper">
+  <h3>En attente</h3>
+  <% @pending_missions.each do |mission| %>
+    <div class="mission-followup">
+      <% if mission.project.company.photo? %>
+        <%= cl_image_tag mission.project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/40x40" %>
+        <%= image_tag avatar_url, class: "avatar sm" %>
       <% end %>
+      <div class="items company"><%= mission.project.company.name %></div>
+      <div class="items title"><%= mission.title %></div>
+      <div class="skill_list items">
+        <% mission.skills.each do |skill| %>
+          <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
+        <% end %>
+      </div>
+      <div class="items">A livrer le <%= mission.project.agreed_delivery_at.strftime("%d %m %Y") %></div>
     </div>
-    <div class="items">A livrer le <%= mission.project.agreed_delivery_at.strftime("%d %m %Y") %></div>
-  </div>
-<% end %>
-<h3>En cours</h3>
-<% @ongoing_missions.each do |mission| %>
-  <div class="mission-followup">
-    <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
-    <div class="items company"><%= mission.project.company.name %></div>
-    <div class="items title"><%= mission.title %></div>
-    <div class="skill_list items">
-      <% mission.skills.each do |skill| %>
-        <span style="color: <%= skill.color %>;"><%= skill.name %></span>
+  <% end %>
+  <h3>En cours</h3>
+  <% @ongoing_missions.each do |mission| %>
+    <div class="mission-followup">
+      <% if mission.project.company.photo? %>
+        <%= cl_image_tag mission.project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/40x40" %>
+        <%= image_tag avatar_url, class: "avatar sm" %>
       <% end %>
+      <div class="items company"><%= mission.project.company.name %></div>
+      <div class="items title"><%= mission.title %></div>
+      <div class="skill_list items">
+        <% mission.skills.each do |skill| %>
+          <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
+        <% end %>
+      </div>
+      <div class="items">A livrer le <%= mission.project.agreed_delivery_at.strftime("%d %m %Y") %></div>
     </div>
-    <div class="items">A livrer le <%= mission.project.agreed_delivery_at.strftime("%d %m %Y") %></div>
-  </div>
-<% end %>
-<h3>Livré</h3>
-<% @delivered_missions.each do |mission| %>
-  <div class="mission-followup">
-    <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
-    <div class="items company"><%= mission.project.company.name %></div>
-    <div class="items title"><%= mission.title %></div>
-    <div class="skill_list items">
-      <% mission.skills.each do |skill| %>
-        <span style="color: <%= skill.color %>;"><%= skill.name %></span>
+  <% end %>
+  <h3>Livré</h3>
+  <% @delivered_missions.each do |mission| %>
+    <div class="mission-followup">
+      <% if mission.project.company.photo? %>
+        <%= cl_image_tag mission.project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/40x40" %>
+        <%= image_tag avatar_url, class: "avatar sm" %>
       <% end %>
+      <div class="items company"><%= mission.project.company.name %></div>
+      <div class="items title"><%= mission.title %></div>
+      <div class="skill_list items">
+        <% mission.skills.each do |skill| %>
+          <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
+        <% end %>
+      </div>
+      <div class="items">Livré le <%= mission.project.delivered_at.strftime("%d %m %Y") %></div>
     </div>
-    <div class="items">Livré le <%= mission.project.delivered_at.strftime("%d %m %Y") %></div>
-  </div>
-<% end %>
+  <% end %>
+</div>

@@ -18,9 +18,8 @@ class ProjectsController < ApplicationController
     @project = @company.projects.new(project_params)
 
     if @company.save && @project.save
-      redirect_to root_path, notice: "YOUPI"
+      redirect_to company_projects_path, notice: "Votre projet a bien été créé"
     else
-      # byebug
       render :new
     end
   end
@@ -29,6 +28,12 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+    @projects = Project.where(user_id: current_user)
+    @accepted = @projects.accepted
+    @scoped = @projects.scoped
+    @ongoing = @projects.ongoing
+    @delivered = @projects.delivered
+    @paid_off = @projects.where.not(paid_off_at: nil)
   end
 
   def company_params

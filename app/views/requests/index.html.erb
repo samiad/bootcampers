@@ -1,12 +1,30 @@
-<h3>Demandes de projet</h3>
-<% @requests.each do |request| %>
-  <div class="mission-followup">
-    <img src="https://source.unsplash.com/random/40x40" class="avatar sm">
-    <div class="items company"><%= request.company.name %></div>
-    <div class="items request_title"><%= request.request_title %></div>
-    <div class="items description"><%= request.request_description %></div>
-    <div class="items budget"><%= request.budget %>€</div>
-    <div class="items">A livrer le <%= request.request_delivery_at.strftime("%d %m %Y") %></div>
-    <% link_to "Accepter", "#", class: "btn btn-primary" %>
+<div class="container">
+  <h1 class="projects-title">Demandes de projet</h1>
+  <% @requests.each do |request| %>
+
+  <div class="card-leader-project">
+    <div class="lp-company-infos">
+      <% if request.company.photo? %>
+        <%= cl_image_tag request.company.photo.path, width: 80, height: 80, crop: :fill, class: "company-avatar" %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/80x80" %>
+        <%= image_tag avatar_url, class: "company-avatar" %>
+      <% end %>
+      <div><strong><%= request.company.name %></strong></div>
+      <div><%= request.company.user.first_name %> <%= request.company.user.last_name %></div>
+      <div><%= request.company.user.phone_number %></div>
+      <div><%= request.company.user.email %></div>
+    </div>
+    <div class="lp-project-infos">
+      <div><strong>Titre : </strong><%= request.request_title %></div>
+      <div><strong>Description : </strong><%= request.request_description %></div>
+      <div><strong>Date de livraison souhaitée : </strong><%= request.request_delivery_at.strftime("%d/%m/%Y") %></div>
+    </div>
+    <div class="lp-project-price">
+      <div><strong>Budget</strong></div>
+      <div><%= number_with_delimiter( (request.budget), delimiter: " ") %> €</div>
+      <%= button_to "Accepter", request_accepteds_path(request.id), class: "btn btn-accept-request" %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>
