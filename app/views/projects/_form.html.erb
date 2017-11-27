@@ -1,58 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
       <div class="form-project">
         <h1>Publiez une mission</h1>
-        <%= simple_form_for @project do |f| %>
-          <div class="row">
-            <div class="col-xs-6">
-              <%= f.input :company, placeholder: "Coca, YouPorn, Adidas..." %>
-            </div>
-            <div class="col-xs-6">
-              <%= f.input :user, placeholder: "Jean-Guillaume" %>
-            </div>
-          </div>
-          <%= f.input :request_title, placeholder: "Création d'un site web" %>
-          <%= f.input :request_description, placeholder: "Site responsive..." %>
-
-          <div class="form-group boolean optional project_landing_page">
-            <div class="category-choices">
-              <input value="0" type="hidden" name="project[landing_page]">
-
-              <div class="category-choice">
-                <label class="boolean optional" for="project_landing_page">
-                  <input class="hidden" type="checkbox" value="1" checked="checked" name="project[landing_page]" id="project_landing_page">
-                  Landing page
-                  <i class="fa fa-check"></i>
-                </label>
-              </div>
-
-              <div class="category-choice">
-                <label class="boolean optional" for="project_landing_page">
-                  <input class="hidden" type="checkbox" value="1" checked="checked" name="project[landing_page]" id="project_landing_page">
-                  Site vitrine
-                  <i class="fa fa-check"></i>
-                </label>
-              </div>
-
-              <div class="category-choice">
-                <label class="boolean optional" for="project_landing_page">
-                  <input class="hidden" type="checkbox" value="1" checked="checked" name="project[landing_page]" id="project_landing_page">
-                  Application
-                  <i class="fa fa-check"></i>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <%= f.input :budget, placeholder: "6.000 €" %>
-          <%= f.input :request_delivery_at %>
-          <%= f.submit "Publier la mission", class: "btn btn-warning" %>
+        <%= simple_form_for @project do |p| %>
+          <% if @company.persisted? %>
+            <h2>Your company : <%= @company.name %></h2>
+          <% else %>
+            <%= p.simple_fields_for @company do |c| %>
+              <h2>Your company</h2>
+              <%= c.input :name %>
+              <%= c.input :siret %>
+              <%= c.input :vat_number %>
+              <%= c.input :address %>
+              <%= c.input :activity_code %>
+              <%= c.input :website %>
+            <% end  %>
+          <% end  %>
+          <h2>Your project</h2>
+          <%= p.input :request_title, placeholder: "Création d'un site web" %>
+          <%= p.input :request_description, placeholder: "Site responsive..." %>
+          <%= p.input :budget, placeholder: "6.000 €" %>
+          <%= p.input :request_delivery_at %>
+          <%= p.submit "Publier la mission", class: "btn btn-warning" %>
         <% end %>
       </div>
-
-
     </div>
   </div>
 </div>

@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body class="application">
-    <% unless devise_controller? || new_project_path %>
+    <% unless devise_controller? %>
       <%= render "shared/sidebar" %>
     <% end %>
       <div class="content">
