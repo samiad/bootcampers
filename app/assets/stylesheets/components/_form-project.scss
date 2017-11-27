@@ -6,13 +6,40 @@
   h1 {
     text-align: center;
     font-size: 30px;
+    margin-bottom: 30px;
+    color: $blue;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: lighter;
     margin-bottom: 20px;
   }
 
-  .btn {
-    width: 100%;
+  h3 {
+    font-size: 15px;
+    font-weight: lighter;
+  }
+
+  .btn-warning {
+    margin-top: 15px;
     border-radius: 5px;
     padding: 10px;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: white;
+    transition: 0.4s ease;
+    font-size: 14px;
+    width: 100%;
+    transition: .3s ease-out;
+    border-color: $orange;
+  }
+
+  .btn-warning:hover {
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+    background-color: #ff6b51;
+    border-color: #ff6b51;
   }
 }
 
@@ -26,11 +53,11 @@
 }
 
 .category-choice {
-  // flex: 0 0 30%;
+  color: #cccccc;
   background: transparent;
   padding: 15px;
   border-radius: 5px;
-  border: 1px solid $lightgray;
+  border: 1px solid #e8e8e8;
   font-size: 14px;
   text-align: center;
   &:hover {
