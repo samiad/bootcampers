@@ -3,11 +3,10 @@ class Requests::AcceptedsController < ApplicationController
 
   def create
     if @accepted.accepted_at == nil
-      @accepted.user_id = current_user
+      @accepted.user_id = current_user.id
       @accepted.accepted_at = DateTime.now
       if @accepted.save
         flash[:success] = "Congrats, project #{@accepted.title} is yours!"
-        # Left redirect as a comment since action is not yet coded in projects controller
         redirect_to projects_path
       else
         flash[:error] = "Sorry, something went wrong"
