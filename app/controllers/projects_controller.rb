@@ -3,6 +3,11 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = current_user.projects
+    @accepted = @projects.accepted
+    @scoped = @projects.scoped
+    @ongoing = @projects.ongoing
+    @delivered = @projects.delivered
+    @paid_off = @projects.where.not(paid_off_at: nil)
   end
 
   def show
