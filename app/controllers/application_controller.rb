@@ -2,6 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
+  before_action :set_sign_up_role, if: :devise_controller?
+
+  def set_sign_up_role
+    session[:role] = params[:as] if params[:as]
+  end
+  
   def after_sign_in_path_for(resource)
     if resource.bootcamper?
       missions_path
@@ -11,5 +17,5 @@ class ApplicationController < ActionController::Base
       projects_path
     end
   end
-
+  
 end

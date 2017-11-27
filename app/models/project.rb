@@ -1,6 +1,11 @@
 class Project < ApplicationRecord
   belongs_to :company
   belongs_to :user
+
+  accepts_nested_attributes_for :company
+
+
+
   has_many :missions
 
   validates :request_title, presence: true
