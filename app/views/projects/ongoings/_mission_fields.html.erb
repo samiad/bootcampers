@@ -2,6 +2,7 @@
   <%= f.input :title, label: "Titre" %>
   <%= f.input :description, label: "Description" %>
   <%= f.input :price, label: "Rémunération" %>
+  <%= f.association :skills, as: :check_boxes %>
 
   <%= f.check_box :_destroy %>
 
