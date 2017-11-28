@@ -14,7 +14,7 @@ class Mission < ApplicationRecord
   scope :pending, -> { includes(:applies).where(applies: { accepted_at: nil, declined_at: nil })
                                         .where.not(applies: { id: nil}) }
   scope :not_mine, -> (user) { where.not(id: user.missions) }
-  scope :mine, -> (user) { includes(:applies).where(applies: {user_id: user}).map(&:id) }
+  scope :mine, -> (user) { includes(:applies).where(applies: {user_id: user}) }
   scope :not_delivered, -> { joins(:project).where(projects: {delivered_at: nil}) }
   scope :accepted, -> { includes(:applies).where.not(applies: { accepted_at: nil})}
   scope :delivered, -> { joins(:project).where.not(projects: { delivered_at: nil}) }

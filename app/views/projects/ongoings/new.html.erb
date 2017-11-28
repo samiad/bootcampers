@@ -3,7 +3,8 @@
   <%= p.input :description, label: "Description", placeholder: @project.request_description %>
   <%= p.input :category, label: "Catégorie" %>
   <%= p.input :price, label: "Prix", placeholder: @project.budget %>
-  <%= p.input :agreed_delivery_at, label: "Date de livrasion", placeholder: @project.request_delivery_at %>
+  Date de livraison demandée: <%= @project.request_delivery_at.strftime("%d %m %Y") %>
+  <%= p.input :agreed_delivery_at, label: "Date de livraison acceptée", as: :string, input_html: { data: { provide: 'datepicker' } } %>
 
   <div id="missions">
     <%= p.simple_fields_for :missions do |mission| %>
