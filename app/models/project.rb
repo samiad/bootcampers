@@ -4,14 +4,13 @@ class Project < ApplicationRecord
 
   accepts_nested_attributes_for :company
 
-
-
-  has_many :missions
-
   validates :request_title, presence: true
   validates :request_description, presence: true, length: {minimum: 20}
   validates :budget, presence: true
   validates :request_delivery_at, presence: true
+
+  has_many :missions, inverse_of: :project
+  accepts_nested_attributes_for :missions, allow_destroy: true
 
   def status
     if paid_off_at.present?
