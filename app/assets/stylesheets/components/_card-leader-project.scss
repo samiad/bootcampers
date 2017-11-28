@@ -1,0 +1,85 @@
+.container {
+  width: 90%;
+  color: $gray;
+}
+
+.container a {
+    text-decoration: none;
+    color: $gray;
+    &:hover {
+      text-decoration: none;
+      color: $gray;
+    }
+    &:focus {
+      text-decoration: none;
+      color: $gray;
+    }
+  }
+
+.projects-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-manager-project {
+  background-color: $white;
+  border-radius: 5px;
+  transition: 0.2s ease;
+  box-shadow: 0px 0px 5px -1px $lightgray;
+  border: 1px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.card-manager-project:hover {
+  transform: scale(1.05);
+}
+
+
+.manager-backg-status {
+  border-radius: 5px 0px 0px 5px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease;
+  text-align: center;
+  border: 1px;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.manager-project-infos {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.manager-company-avatar {
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.manager-project-title {
+  flex-grow: 1;
+}
+
+.manager-project-date {
+  display: flex;
+  justify-content: center;
+  width: 30%
+}
+
+.manager-project-btn-message {
+  display: flex;
+  justify-content: center;
+  width: 20%
+}

@@ -17,7 +17,7 @@ class Project < ApplicationRecord
     if paid_off_at.present?
       { slug: :paid_off, label: "projet finalisé", color: "#70cb0c" }
     elsif delivered_at.present?
-      { slug: :delivered, label: "livré, à régler", color: "#ff5c3e" }
+      { slug: :delivered, label: "livré", color: "#ff5c3e" }
     elsif signed_off_at.present?
       { slug: :signed_off, label: "en cours de développement", color: "#4b84ed" }
     elsif scoped_at.present?
