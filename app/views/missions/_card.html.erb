@@ -18,13 +18,13 @@
             <%= number_with_delimiter( mission.price, delimiter: " ") %> €
           </div>
           <div class="card-mission-company-name">
-            <%= mission.project.company.name %>
+            <strong><%= mission.project.company.name %></strong>
           </div>
          </div>
       </div>
       <div class="card-mission-content">
         <div class="card-mission-date">
-          Date de livraison : <%= mission.project.agreed_delivery_at.strftime("%d/%m/%Y")  %>
+          A livrer le <%= mission.project.agreed_delivery_at.strftime("%d/%m/%Y")  %>
         </div>
         <div class="card-mission-description">
           <%= mission.description.first(50) %>...

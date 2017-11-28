@@ -103,3 +103,43 @@
   color: $white;
   box-shadow: 2px 2px 2px $lightgray;
 }
+
+
+/*button apply une mission */
+.btn-apply-mission {
+  background-color: $orange;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease-out;
+  margin-top: 10px;
+}
+
+.btn-apply-mission:hover {
+  opacity: 0.8;
+  color: $white;
+  box-shadow: 2px 2px 2px $lightgray;
+}
+
+
+/*button télécharger cahier des charges */
+.btn-download-specs {
+  background-color: $blue;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease-out;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+
+.btn-download-specs:hover {
+  opacity: 0.8;
+  color: $white;
+  box-shadow: 2px 2px 2px $lightgray;
+}
