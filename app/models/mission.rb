@@ -10,6 +10,8 @@ class Mission < ApplicationRecord
   validates :description, presence: true, length: {minimum: 20}
   validates :price, presence: true
 
+
+
   scope :no_apply, -> { includes(:applies).where(applies: { id: nil}) }
   scope :pending, -> { includes(:applies).where(applies: { accepted_at: nil, declined_at: nil })
                                         .where.not(applies: { id: nil}) }
