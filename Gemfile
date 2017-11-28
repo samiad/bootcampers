@@ -22,6 +22,10 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'money-rails'
 gem 'stripe'
+=======
+# to manage dynamic nested forms
+gem 'cocoon'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'pry-byebug'

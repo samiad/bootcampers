@@ -1,0 +1,32 @@
+<%= link_to project_path(project), data: {toggle: "modal", target: "#project-modal"}, class: 'card-toggler' do %>
+  <div class="card-manager-project">
+
+    <div class="manager-project-status">
+      <div class="manager-backg-status" style="background-color: <%= project.status[:color] %>">
+        <div class=":anager-project-status"><%= project.status[:label] %></div>
+      </div>
+    </div>
+
+    <div class="manager-project-infos">
+
+      <div class="manager-company-avatar">
+        <% if project.company.photo? %>
+          <%= cl_image_tag project.company.photo.path, class: "manager-company-avatar", width: 50, height: 50, crop: :fill %>
+        <% else %>
+          <% avatar_url = "http://placehold.it/50x50" %>
+          <%= image_tag avatar_url, class: "manager-company-avatar"%>
+        <% end %>
+      </div>
+
+      <div class="manager-project-title"><strong>Projet : </strong><%= project.title %></div>
+
+      <div class="manager-project-date">
+        <div class="manager-project-d"><strong>Finalisé le </strong><%= project.paid_off_at.strftime("%d/%m/%Y") %></div>
+      </div>
+      <div class="manager-project-btn-message">
+        <strong></strong>
+      </div>
+
+    </div>
+  </div>
+<% end %>
