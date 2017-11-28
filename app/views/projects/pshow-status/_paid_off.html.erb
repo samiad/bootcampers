@@ -1,0 +1,32 @@
+<div class="manager-project-modal-title" style="background-color: <%= @project.status[:color] %>">
+  <div class="mpmt-title"><%= @project.title %></div>
+</div>
+<div class="manager-project-modal-infos">
+  <div class="mpm-details">
+    <div class="mpm-description">
+      <div><strong>Description : </strong><%= @project.description %></div>
+      <div><strong>Prix : </strong><%= number_with_delimiter( @project.price, delimiter: " ") %>  €</div>
+      <div><strong>Date de livraison : </strong><%= @project.agreed_delivery_at.strftime("%d/%m/%Y") %></div>
+    </div>
+    <div class="mpm-date">
+      <div class="state-date"><strong>Finalisé le</strong></div>
+      <div><%= @project.paid_off_at.strftime("%d/%m/%Y") %></div>
+    </div>
+  </div>
+  <div class="mpm-company-title text-center"><strong><%= @project.company.name.upcase %></strong></div>
+  <div class="mpm-company-infos">
+    <div class="mpm-company-avatar">
+      <% if @project.company.photo? %>
+        <%= cl_image_tag @project.company.photo.path, class: "mpm-company-avatar", width: 100, height: 100, crop: :fill %>
+      <% else %>
+        <% avatar_url = "http://placehold.it/100x100" %>
+        <%= image_tag avatar_url, class: "mpm-company-avatar"%>
+      <% end %>
+    </div>
+    <div class="mpm-company-details text-center">
+      <div><strong><%= @project.company.user.first_name.capitalize %></strong></div>
+      <div><%= @project.company.user.email %></div>
+      <div><%= @project.company.user.phone_number %></div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,7 @@
   margin-bottom: 20px;
 }
 
-.card-leader-project {
+.card-leader-request {
   background-color: $white;
   text-decoration: none;
   border-radius: 5px;
@@ -23,30 +23,30 @@
   font-size: 14px;
 }
 
-.card-leader-project:hover {
+.card-leader-request:hover {
   transform: scale(1.1)
 }
 
-.lp-company-infos {
+.lr-company-infos {
   width: 150px;
 }
 
 
-.lp-project-infos {
+.lr-project-infos {
   width: 340px;
 }
 
 
-.lp-project-price {
+.lr-project-price {
   width: 100px;
   margin-right: 30px;
 }
 
 
-.lp-company-infos, .lp-project-price{
+.lr-company-infos, .lr-project-price{
   text-align: center;
 }
-.lp-company-infos, .lp-project-infos, .lp-project-price{
+.lr-company-infos, .lr-project-infos, .lr-project-price{
   margin-bottom: 10px;
   margin-top: 10px;
 }

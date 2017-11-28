@@ -1,0 +1,73 @@
+.manager-project-modal {
+  background-color: $white;
+  transition: 0.2s ease;
+  border-radius: 10px 10px 0 0;
+  border: 1px;
+  height: auto;
+  font-size: 14px;
+}
+
+.modal-content {
+  border-radius: 10px;
+  width: 700px;
+}
+
+.manager-project-modal-title {
+  border-radius: 10px 10px 0 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bolder;
+  height: 70px;
+  display: flex;
+  align-items : center;
+  justify-content: center;
+}
+
+.manager-project-modal-infos {
+  color: $gray;
+  margin: 20px;
+}
+
+.mpmt-title {
+  color: $white;
+}
+
+.mpm-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mpm-description {
+  margin-right: 20px;
+}
+
+.mpm-date {
+  text-align: center;
+}
+
+.state-date {
+  margin-bottom: 5px;
+}
+
+.mpm-message {
+  margin-top: 10px;
+}
+
+.mpm-company-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.mpm-company-infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mpm-company-avatar {
+  margin-right: 20px;
+  border-radius: 50px;
+}
+

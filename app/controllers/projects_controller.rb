@@ -1,16 +1,19 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: :show
+  # before_action :set_project, only: :show
 
   def index
-    @projects = current_user.projects
-    @accepted = @projects.accepted
-    @scoped = @projects.scoped
-    @ongoing = @projects.ongoing
-    @delivered = @projects.delivered
-    @paid_off = @projects.where.not(paid_off_at: nil)
+    # @projects = current_user.projects
+    # @accepted = @projects.accepted
+    # @scoped = @projects.scoped
+    # @ongoing = @projects.ongoing
+    # @delivered = @projects.delivered
+    # @paid_off = @projects.where.not(paid_off_at: nil)
+    @projects = current_user.projects.all
   end
 
   def show
+    @project = Project.find(params[:id])
+    render layout: false
   end
 
   def new
@@ -32,15 +35,15 @@ class ProjectsController < ApplicationController
 
   private
 
-  def set_project
-    @project = Project.find(params[:id])
-    @projects = Project.where(user_id: current_user)
-    @accepted = @projects.accepted
-    @scoped = @projects.scoped
-    @ongoing = @projects.ongoing
-    @delivered = @projects.delivered
-    @paid_off = @projects.where.not(paid_off_at: nil)
-  end
+  # def set_project
+  #   @project = Project.find(params[:id])
+  #   @projects = Project.where(user_id: current_user)
+  #   @accepted = @projects.accepted
+  #   @scoped = @projects.scoped
+  #   @ongoing = @projects.ongoing
+  #   @delivered = @projects.delivered
+  #   @paid_off = @projects.where.not(paid_off_at: nil)
+  # end
 
   def company_params
     params.require(:project).require(:company).permit(:name, :siret, :vat_number, :address, :activity_code, :website)
