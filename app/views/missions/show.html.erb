@@ -1,59 +1,57 @@
-<div class="container-fluid">
-  <div class="card-show">
-    <div class="card-show-title">
-      <h1><%= @mission.title %></h1>
-    </div>
-    <div class="card-show-quit">
+<div class="card-show">
+  <div class="card-show-title">
+    <h1><%= @mission.title %></h1>
+  </div>
+  <div class="card-show-quit">
 
 
+  </div>
+  <div class="card-show-content">
+    <div class="card-show-infos">
+      <div class="card-show-logo">
+        <% if @mission.project.company.photo? %>
+          <%= cl_image_tag @mission.project.company.photo.path, class: "card-show-company-logo", width: 120, height: 120, crop: :fill %>
+        <% else %>
+          <% avatar_url = "http://placehold.it/120x120" %>
+          <%= image_tag avatar_url, class: "card-show-company-logo"%>
+        <% end %>
+      </div>
+      <div class="card-show-details">
+        <div class="card-show-company-name">
+          <p><strong><%= @mission.project.company.name.upcase %></strong></p>
+        </div>
+        <div class="card-show-price">
+          <p><strong>Rémunération : </strong><%= number_with_delimiter( @mission.price, delimiter: " ") %> €</p>
+        </div>
+        <div class="card-show-date">
+          <p><strong>Date de livraison : </strong><%= @mission.project.agreed_delivery_at.strftime("%d/%m/%Y") %></p>
+        </div>
+        <div class="card-show-skills">
+          <p><strong>Compétence(s) requise(s) :</strong>
+            <% @mission.skills.each do |skill| %>
+              <div class="card-mission-skill" style="color: <%= skill.color %>">
+                <%= skill.name.upcase %>
+              </div>
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <div class="card-show-btn-apply">
+        <%= button_to "Postuler", mission_applies_path(@mission), class: "btn btn-apply-mission" %>
+      </div>
     </div>
-    <div class="card-show-content">
-      <div class="card-show-infos">
-        <div class="card-show-logo">
-          <% if @mission.project.company.photo? %>
-            <%= cl_image_tag @mission.project.company.photo.path, class: "card-show-company-logo", width: 120, height: 120, crop: :fill %>
-          <% else %>
-            <% avatar_url = "http://placehold.it/120x120" %>
-            <%= image_tag avatar_url, class: "card-show-company-logo"%>
-          <% end %>
-        </div>
-        <div class="card-show-details">
-          <div class="card-show-company-name">
-            <p><%= @mission.project.company.name %></p>
-          </div>
-          <div class="card-show-price">
-            <p>Rémunération : <%= @mission.price %> €</p>
-          </div>
-          <div class="card-show-date">
-            <p>Date de livraison : <%= @mission.project.agreed_delivery_at.strftime("%d/%m/%Y") %></p>
-          </div>
-          <div class="card-show-skills">
-            <p>Compétence(s) requise(s) :
-              <% @mission.skills.each do |skill| %>
-                <div class="card-mission-skill" style="color: <%= skill.color %>">
-                  <%= skill.name.upcase %>
-                </div>
-              <% end %>
-            </p>
-          </div>
-        </div>
-        <div class="card-show-btn-apply">
-          <%= button_to "Postuler", mission_applies_path(@mission), class: "btn btn-warning" %>
-        </div>
-      </div>
-      <div class="card-show-description">
-        <h3><strong>Description de la mission :</strong></h3>
-        <p><%= @mission.project.description %></p>
-      </div>
-      <div class="card-show-project-infos">
-        <h3><strong>Contexte du projet :</strong></h3>
-        <p>Titre : <%= @mission.project.title %></p>
-        <p>Category : <%= @mission.project.category %></p>
-        <p>Budget total : <%= @mission.project.price %> €</p>
-      </div>
-      <div class="card-show-download">
-        Télécharger les documents
-      </div>
+    <div class="card-show-description">
+      <h3 class="subtitle-mission"><strong>Description de la mission :</strong></h3>
+      <div><%= @mission.project.description %></div>
+    </div>
+    <div class="card-show-project-infos">
+      <h3 class="subtitle-mission"><strong>Contexte du projet :</strong></h3>
+      <div><strong>Titre : </strong><%= @mission.project.title %></div>
+      <div><strong>Category : </strong><%= @mission.project.category %></div>
+      <div><strong>Budget total : </strong><%= number_with_delimiter( @mission.project.price, delimiter: " ") %> €</div>
+    </div>
+    <div class="card-show-download">
+      <%= button_to "Télécharger le cahier des charges", "#", class: "btn btn-download-specs" %>
     </div>
   </div>
 </div>

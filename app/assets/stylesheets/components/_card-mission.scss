@@ -52,6 +52,11 @@
   display: flex;
   align-items: center;
 
+  div {
+    color: $gray;
+  }
+
+
   img {
     width: 80px;
     height: 80px;
@@ -86,6 +91,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  div {
+    color: $gray;
+  }
 }
 
 .card-mission-date {
@@ -93,7 +102,6 @@
   padding: 0px 10px 0px 20px;
   color: $lightgray;
   font-size: 16px;
-  font-weight: 800;
   display: flex;
   align-items: center
 }
@@ -140,18 +148,16 @@
 
 // Fin du CSS de l'index missions
 
-// CSS de la card mission shadow
+// CSS de la card mission show
 .card-show {
-  height: 100vh;
+  // height: 100vh;
   background: white;
   border-radius: 10px;
-  box-shadow: -1px -1px 20px -5px black;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 20px;
+  box-shadow: -1px -1px 20px -5px $lightgray;
+  color: $gray;
 
   .card-show-content {
-    height: 100vh;
+    // height: 100vh;
     overflow-x: auto;
     display: flex;
     flex-direction: column;
@@ -181,11 +187,15 @@
 }
 
 .card-show-description {
-  margin: 30px;
+  margin: 10px 30px 10px 30px;
+}
+
+.card-show-description div, .card-show-project-infos div {
+  font-size: 14px;
 }
 
 .card-show-project-infos {
-  margin: 30px;
+  margin: 10px 30px 10px 30px;
 }
 
 .card-show-download {
@@ -207,4 +217,12 @@
   width: 120px;
   border-radius: 50%;
   box-shadow: 0px 0px 5px -1px $lightblue;
+}
+
+.card-show-company-name {
+  font-size: 20px;
+}
+
+.subtitle-mission {
+  font-size: 18px;
 }
