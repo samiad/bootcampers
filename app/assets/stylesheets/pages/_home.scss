@@ -27,7 +27,20 @@
 
 .banner p {
   font-weight: lighter;
-  padding-bottom: 25px;
+  // padding-bottom: 25px;
+  margin-bottom: 50px;
   font-size: 30px;
   opacity: 0.8;
+}
+
+.banner-companies-logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+
+  img {
+    width: 9%;
+    height: 9%;
+  }
 }
