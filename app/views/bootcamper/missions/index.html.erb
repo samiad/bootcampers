@@ -1,60 +1,18 @@
-<h1 style="text-align: center">Mes missions</h1>
-<div class="wrapper">
-  <h3>En attente</h3>
+<div class="container">
+  <h1 class="bootcamper-missions-title">Missions en cours</h1>
   <% @pending_missions.each do |mission| %>
-    <div class="mission-followup">
-      <% if mission.project.company.photo? %>
-        <%= cl_image_tag mission.project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
-      <% else %>
-        <% avatar_url = "http://placehold.it/40x40" %>
-        <%= image_tag avatar_url, class: "avatar sm" %>
-      <% end %>
-      <div class="items company"><%= mission.project.company.name %></div>
-      <div class="items title"><%= mission.title %></div>
-      <div class="skill_list items">
-        <% mission.skills.each do |skill| %>
-          <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
-        <% end %>
-      </div>
-      <div class="items">A livrer le <%= mission.project.agreed_delivery_at.strftime("%d %m %Y") %></div>
-    </div>
+    <%= render "pending_mission_card", mission: mission %>
   <% end %>
-  <h3>En cours</h3>
+
   <% @ongoing_missions.each do |mission| %>
-    <div class="mission-followup">
-      <% if mission.project.company.photo? %>
-        <%= cl_image_tag mission.project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
-      <% else %>
-        <% avatar_url = "http://placehold.it/40x40" %>
-        <%= image_tag avatar_url, class: "avatar sm" %>
-      <% end %>
-      <div class="items company"><%= mission.project.company.name %></div>
-      <div class="items title"><%= mission.title %></div>
-      <div class="skill_list items">
-        <% mission.skills.each do |skill| %>
-          <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
-        <% end %>
-      </div>
-      <div class="items">A livrer le <%= mission.project.agreed_delivery_at.strftime("%d %m %Y") %></div>
-    </div>
+    <%= render "ongoing_mission_card", mission: mission %>
   <% end %>
-  <h3>Livré</h3>
+
   <% @delivered_missions.each do |mission| %>
-    <div class="mission-followup">
-      <% if mission.project.company.photo? %>
-        <%= cl_image_tag mission.project.company.photo.path, width: 40, height: 40, crop: :fill, class: "avatar sm" %>
-      <% else %>
-        <% avatar_url = "http://placehold.it/40x40" %>
-        <%= image_tag avatar_url, class: "avatar sm" %>
-      <% end %>
-      <div class="items company"><%= mission.project.company.name %></div>
-      <div class="items title"><%= mission.title %></div>
-      <div class="skill_list items">
-        <% mission.skills.each do |skill| %>
-          <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
-        <% end %>
-      </div>
-      <div class="items">Livré le <%= mission.project.delivered_at.strftime("%d %m %Y") %></div>
-    </div>
+    <%= render "delivered_mission_card", mission: mission %>
+  <% end %>
+
+  <% @paid_off_missions.each do |mission| %>
+    <%= render "paid_off_mission_card", mission: mission %>
   <% end %>
 </div>

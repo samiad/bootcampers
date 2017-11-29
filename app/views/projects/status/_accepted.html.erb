@@ -24,7 +24,7 @@
         <div class="manager-project-d"><strong>Accepté le </strong><%= project.accepted_at.strftime("%d/%m/%Y") %></div>
       </div>
       <div class="manager-project-btn-message">
-        <%= button_to "Définir", "#", class: "btn btn-define" %>
+        <%= button_to "Définir", new_project_ongoing_path(project), class: "btn btn-define" %>
       </div>
 
     </div>
