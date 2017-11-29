@@ -29,4 +29,13 @@
       <div><%= @project.company.user.phone_number %></div>
     </div>
   </div>
+  <div class="mpm-project-title text-center"><strong>Missions</strong></div>
+    <div class="mpm-project-missions">
+      <% @project.missions.each do |mission| %>
+        <div id="mission-<%= mission.id %>">
+          <%= render "projects/missions/signed_delivered_paid_mission_card", mission: mission %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
