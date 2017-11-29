@@ -50,6 +50,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:request_title, :request_description, :budget, :request_delivery_at)
+    params.require(:project).permit(:request_title, :request_description, :budget, :request_delivery_at).merge(state: 'pending')
   end
 end

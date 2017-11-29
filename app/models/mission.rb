@@ -12,6 +12,8 @@ class Mission < ApplicationRecord
 
 
 
+
+
   scope :no_apply, -> { includes(:applies).where(applies: { id: nil}) }
   scope :pending, -> { includes(:applies).where(applies: { accepted_at: nil, declined_at: nil })
                                         .where.not(applies: { id: nil}) }

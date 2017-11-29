@@ -1,19 +1,32 @@
-<%= simple_form_for @project, url: project_ongoings_path(@project), method: :post do |p| %>
-  <%= p.input :title, label: "Titre", placeholder: @project.request_title %>
-  <%= p.input :description, label: "Description", placeholder: @project.request_description %>
-  <%= p.input :category, label: "Catégorie" %>
-  <%= p.input :price, label: "Prix", placeholder: @project.budget %>
-  Date de livraison demandée: <%= @project.request_delivery_at.strftime("%d %m %Y") %>
-  <%= p.input :agreed_delivery_at, label: "Date de livraison acceptée", as: :string, input_html: { data: { provide: 'datepicker' } } %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-project-ongoing">
+        <h1>Publiez une mission</h1>
 
-  <div id="missions">
-    <%= p.simple_fields_for :missions do |mission| %>
-      <%= render "mission_fields", f: mission %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'Ajouter 1 mission', p, :missions %>
+        <%= simple_form_for @project, url: project_ongoings_path(@project), method: :post do |p| %>
+          <%= p.input :title, label: "Titre choisi par l'entreprise :", placeholder: @project.request_title %>
+          <%= p.input :description, label: "Description choisie par l'entreprise :", placeholder: @project.request_description %>
+          <%= p.input :category, label: "Catégorie de la mission :" %>
+          <%= p.input :price, label: "Montant estimé de la mission :", placeholder: @project.budget %>
+          <div class="form-project-ongoing-date">
+            Date de livraison demandée : <b><%= @project.request_delivery_at.strftime("%d.%m.%Y") %></b>
+          </div>
+          <%= p.input :agreed_delivery_at, label: "Date de livraison acceptée", as: :string, input_html: { data: { provide: 'datepicker' } } %>
+
+          <div id="missions">
+            <%= p.simple_fields_for :missions do |mission| %>
+              <%= render "mission_fields", f: mission %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association 'Ajouter une mission', p, :missions, class: "btn btn-publish" %>
+            </div>
+          </div>
+
+          <%= p.submit "Valider les modifications", class: "btn btn-warning" %>
+        <% end %>
+
+      </div>
     </div>
   </div>
-
-  <%= p.submit %>
-<% end %>
+</div>

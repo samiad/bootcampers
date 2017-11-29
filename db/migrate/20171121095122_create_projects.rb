@@ -12,7 +12,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.text :description
       t.string :category
       t.string :skills
-      t.integer :price
+      t.monetize :price, currency: { present: false }
       t.date :agreed_delivery_at
       t.date :signed_off_at
       t.date :delivered_at

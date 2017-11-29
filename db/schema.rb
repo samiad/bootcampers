@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122134841) do
+ActiveRecord::Schema.define(version: 20171129112533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,14 +84,16 @@ ActiveRecord::Schema.define(version: 20171122134841) do
     t.string   "title"
     t.text     "description"
     t.string   "category"
-    t.integer  "price"
+    t.integer  "price_cents",         default: 0, null: false
     t.date     "agreed_delivery_at"
     t.date     "signed_off_at"
     t.date     "delivered_at"
     t.date     "scoped_at"
     t.date     "paid_off_at"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.jsonb    "payment"
+    t.string   "state"
     t.index ["company_id"], name: "index_projects_on_company_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end
