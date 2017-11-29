@@ -12,6 +12,8 @@ class Project < ApplicationRecord
   has_many :missions, inverse_of: :project
   accepts_nested_attributes_for :missions, allow_destroy: true
 
+  monetize :price_cents
+
   def status
     if paid_off_at.present?
       { slug: :paid_off, label: "projet finalisé", color: "#70cb0c" }
