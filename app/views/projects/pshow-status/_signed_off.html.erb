@@ -12,8 +12,7 @@
       <div class="state-date"><strong>Validé le</strong></div>
       <div><%= @project.signed_off_at.strftime("%d/%m/%Y") %></div>
       <div class="card-btn">
-        <%= button_to "Livrer", "#", class: "btn btn-deliver-show" %>
-        <!-- button_to project_ongoing_new_path(@project) -->
+        <%= button_to "Livrer", project_delivereds_path(@project), class: "btn btn-deliver-show" %>
       </div>
     </div>
     </div>

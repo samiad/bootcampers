@@ -12,8 +12,7 @@
       <div class="state-date"><strong>Accepté le</strong></div>
       <div><%= @project.accepted_at.strftime("%d/%m/%Y") %></div>
       <div class="card-btn">
-        <%= button_to "Définir", "#", class: "btn btn-define-show" %>
-        <!-- button_to project_ongoing_new_path(@project) -->
+        <%= link_to "Définir", new_project_ongoing_path(@project), class: "btn btn-define-show" %>
       </div>
     </div>
   </div>
