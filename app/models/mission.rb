@@ -20,6 +20,10 @@ class Mission < ApplicationRecord
   scope :not_delivered, -> { joins(:project).where(projects: {delivered_at: nil}) }
   scope :accepted, -> { includes(:applies).where.not(applies: { accepted_at: nil})}
   scope :delivered, -> { joins(:project).where.not(projects: { delivered_at: nil}) }
+  scope :paid_off, -> { joins(:project).where.not(projects: {paid_off_at: nil}) }
+  scope :not_paid_off, -> { joins(:project).where(projects: {paid_off_at: nil}) }
+
+
   scope :signed, -> { joins(:project).where.not(projects: {signed_off_at: nil}) }
 
 end

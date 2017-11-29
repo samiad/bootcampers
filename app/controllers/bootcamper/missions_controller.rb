@@ -6,7 +6,9 @@ class Bootcamper::MissionsController < ApplicationController
     # Retrieve my ongoing missions
     @ongoing_missions = Mission.mine(current_user).accepted.not_delivered
     # Retrieve my delivered missions
-    @delivered_missions = Mission.mine(current_user).delivered
+    @delivered_missions = Mission.mine(current_user).delivered.not_paid_off
+    # Retrieve my payed missions
+    @paid_off_missions = Mission.mine(current_user).paid_off
   end
 
 end
