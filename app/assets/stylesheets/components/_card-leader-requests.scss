@@ -27,6 +27,10 @@
   transform: scale(1.05)
 }
 
+.card-leader-request:focus {
+    outline: none;
+  }
+
 .lr-company-infos {
   width: 150px;
 }
