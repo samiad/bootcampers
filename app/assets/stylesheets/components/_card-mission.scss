@@ -22,6 +22,10 @@
   }
 }
 
+.card-mission:hover {
+  transform: scale(1.05)
+}
+
 .background-blue {
   background: $blue;
 }
