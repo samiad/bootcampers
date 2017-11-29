@@ -53,7 +53,7 @@ samia = User.create!(
   password: "samiad",
   bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS. Et je suis leader chez Bootcampers",
   role: 1,
-  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/samia_kituxm.png"
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511957335/IMG_0978_nsbbpb.jpg"
   )
 print "👶 "
 print '///Created 2 Leaders///'

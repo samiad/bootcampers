@@ -1,0 +1,62 @@
+<div class="card-bootcamper-mission">
+
+  <div class="bootcamper-mission-status">
+    <div class="bm-backg bm-delivered">
+      <div class="bm-status">Livrée</div>
+    </div>
+  </div>
+
+  <div class="bootcamper-mission-infos">
+
+    <div class="bm-project-infos">
+
+      <div class="bm-project-company-infos">
+        <div class="mission-company-avatar">
+          <% if mission.project.company.photo? %>
+            <%= cl_image_tag mission.project.company.photo.path, class: "mission-company-avatar", width: 50, height: 50, crop: :fill %>
+          <% else %>
+            <% avatar_url = "http://placehold.it/50x50" %>
+            <%= image_tag avatar_url, class: "mission-company-avatar"%>
+          <% end %>
+        </div>
+        <div class="mission-company-name">
+          <strong><%= mission.project.company.name.upcase %></strong>
+        </div>
+      </div>
+
+      <div class="bm-project-details">
+        <div><strong>Mission : </strong><%= mission.title %></div>
+        <div><strong>Projet : </strong><%= mission.project.title %></div>
+        <div><strong>Description : </strong><%= mission.description %></div>
+        <div><strong>Rémunération : </strong><%= number_with_delimiter( mission.price, delimiter: " ") %>  €</div>
+        <div><strong>Skills :
+          <% mission.skills.each do |skill| %>
+            <span style="color: <%= skill.color %>;"><%= skill.name.upcase %></span>
+          <% end %></strong>
+        </div>
+        <div>
+          <strong>Livrée le : </strong><%= mission.project.delivered_at.strftime("%d/%m/%Y") %>
+        </div>
+      </div>
+    </div>
+
+    <div class="bm-manager">
+      <div class="bm-manager-infos">
+        <div class="bm-manager-title"><strong>Manager Projet</strong></div>
+        <div class="mission-manager-avatar">
+          <% if mission.project.user.photo? %>
+            <%= cl_image_tag mission.project.user.photo.path, class: "mission-manager-avatar", width: 50, height: 50, crop: :fill %>
+          <% else %>
+            <% avatar_url = "http://placehold.it/50x50" %>
+            <%= image_tag avatar_url, class: "mission-manager-avatar"%>
+          <% end %>
+        </div>
+        <div class="mission-manager-name">
+          <strong><%= mission.project.user.first_name.capitalize %></strong>
+        </div>
+        <div><%= mission.project.user.email %></div>
+        <div><%= mission.project.user.phone_number %></div>
+      </div>
+    </div>
+  </div>
+</div>

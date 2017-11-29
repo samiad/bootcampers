@@ -1,0 +1,107 @@
+.container {
+  width: 90%;
+  color: $gray;
+}
+
+.bootcamper-missions-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-bootcamper-mission {
+  background-color: $white;
+  border-radius: 5px;
+  transition: 0.2s ease;
+  box-shadow: 0px 0px 5px -1px $lightgray;
+  border: 1px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.card-bootcamper-mission:hover {
+  transform: scale(1.05);
+}
+
+.bm-backg {
+  border-radius: 5px 0px 0px 5px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease;
+  text-align: center;
+  border: 1px;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
+.bm-pending {
+  background-color: $lightgray;
+}
+
+.bm-ongoing {
+  background-color: $blue;
+}
+
+.bm-delivered {
+  background-color: $orange;
+}
+
+.bm-paid {
+  background-color: $green;
+}
+
+
+.bootcamper-mission-infos {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+}
+
+.bm-project-infos {
+  flex-grow: 1;
+}
+
+.bm-project-details {
+  padding-left: 25px;
+}
+
+.bm-project-company-infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bm-manager {
+  display: flex;
+  align-items: center;
+  width: 25%;
+}
+
+.bm-manager-infos {
+  text-align: center;
+}
+
+.mission-company-avatar {
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.bm-manager-title {
+  margin-bottom: 5px;
+}
+
+
+.mission-manager-avatar{
+  border-radius: 50px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
