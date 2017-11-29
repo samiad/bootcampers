@@ -6,14 +6,14 @@ class Requests::AcceptedsController < ApplicationController
       @accepted.user_id = current_user.id
       @accepted.accepted_at = DateTime.now
       if @accepted.save
-        flash[:success] = "Congrats, project #{@accepted.title} is yours!"
+        flash[:success] = "Yeah, tu suis le projet : #{@accepted.title} !"
         redirect_to projects_path
       else
-        flash[:error] = "Sorry, something went wrong"
+        flash[:error] = "Désolé, la demande n'a pas été prise en compte"
       end
     else
       @leader = User.find(@accepted.user_id)
-      flash[:warning] = "Sorry, this project has just been accepted by #{@leader.first_name} #{@leader.last_name}"
+      flash[:warning] = "Désolé, ce projet est déjà suivi"
     end
   end
 
