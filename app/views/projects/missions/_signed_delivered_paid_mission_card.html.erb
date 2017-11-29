@@ -1,0 +1,42 @@
+<div class="project-card-mission">
+
+  <div class="project-card-mission-title">
+    <div><%= mission.title %></div>
+  </div>
+
+  <div class="project-card-mission-content">
+
+    <div class="project-card-mission-description">
+      <%= mission.description %>
+    </div>
+
+    <div class="project-card-mission-price">
+      <strong>Prix : </strong><%= number_with_delimiter( mission.price, delimiter: " ") %> €
+    </div>
+
+    <div class="project-card-mission-skills">
+      <div class="project-card-mission-skills-title"><strong>Skills requises : </strong></div>
+      <% mission.skills.each do |skill| %>
+        <div class="project-card-mission-skill" style="color: <%= skill.color %>">
+          <%= skill.name.upcase %>
+        </div>
+      <% end %>
+    </div>
+    <div class="project-card-mission-applies">
+      <div class="project-card-mission-applies-title text-center"><strong>Candidats</strong></div>
+      <% if mission.provided? %>
+        <%= mission.accepted_bootcamper.first_name.capitalize %>
+      <% else %>
+        <% mission.applies.each do |apply| %>
+          <div class="project-card-mission-apply">
+            <%= apply.user.first_name.capitalize %>
+          </div>
+          <%= button_to "Accepter", apply_accepteds_path(apply), remote: true %>
+        <% end %>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

@@ -34,7 +34,9 @@
   </div>
   <div class="mpm-project-title text-center"><strong>Missions</strong></div>
     <div class="mpm-project-missions">
-      <div class="row">
-      </div>
+      <% @project.missions.each do |mission| %>
+        <%= render "projects/missions/scoped_mission_card", mission: mission %>
+      <% end %>
     </div>
+  </div>
 </div>
