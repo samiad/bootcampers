@@ -25,6 +25,11 @@
   font-size: 54px;
 }
 
+.banner h2 {
+  font-weight: bolder;
+  font-size: 48px;
+}
+
 .banner p {
   font-weight: lighter;
   // padding-bottom: 25px;
@@ -42,5 +47,31 @@
   img {
     width: 9%;
     height: 9%;
+  }
+}
+
+.banner-404 {
+  margin-top: 25vh;
+  text-align: left;
+  p {
+    color: $white;
+    font-size: 16px;
+    padding: 0px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: $white;
+    font-weight: bolder;
+    font-size: 18px;
+  }
+}
+
+.banner-500 {
+  margin-top: 25vh;
+  text-align: left;
+  h3 {
+    color: $lightorange;
+    font-weight: bolder;
+    font-size: 18px;
   }
 }
