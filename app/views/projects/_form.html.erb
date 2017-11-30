@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-project">
-        <h1>Publiez un projet</h1>
+        <h1>Publiez votre projet</h1>
         <%= simple_form_for @project do |p| %>
           <% if @company.persisted? %>
-            <h2>Votre entreprise est : <%= @company.name %></h2>
+            <h2 class="company-title text-center"><%= @company.name.upcase %></h2>
           <% else %>
             <%= p.simple_fields_for @company do |c| %>
               <h2>Informations concernant votre entreprise :</h2>
