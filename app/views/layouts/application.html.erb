@@ -3,15 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Facebook Open Graph metas -->
-    <meta property="og:url"                content="http://www.bootcampers.co" />
-    <meta property="og:title"              content="Trouve une mission, code sans te soucier du reste" />
+
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
     <meta property="og:locale" content="fr_FR" />
-    <!-- Abides by FB recommendation -->
-    <meta property="og:description"        content="Grâce à Bootcampers développe des projets en freelance sans t'encombrer des tâches administratives et de la négociation client." />
-    <!-- image forced to 1200x630 in order to abide by FB rules  -->
-    <meta property="og:image"              content="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?1200*630&fit=crop&w=1050&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-    <title>Bootcampers</title>
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
