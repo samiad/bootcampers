@@ -69,13 +69,30 @@
   font-weight: bolder;
 }
 
-.project-card-mission-skills-title, .project-card-mission-applies-title {
+.project-card-mission-skills-title {
   margin-right: 5px;
 }
 
+
+.project-card-mission-applies-bootcampers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
 .project-card-mission-applies-title {
+  margin-top: 20px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.project-card-mission-apply {
+  padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  padding: 8px;
+  padding-right: 35px;
+  padding-left: 35px;
 }

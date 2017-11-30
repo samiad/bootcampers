@@ -24,16 +24,19 @@
     </div>
     <div class="project-card-mission-applies">
       <div class="project-card-mission-applies-title text-center"><strong>Candidats</strong></div>
-      <% if mission.provided? %>
-        <%= mission.accepted_bootcamper.first_name.capitalize %>
-      <% else %>
-        <% mission.applies.each do |apply| %>
-          <div class="project-card-mission-apply">
-            <%= apply.user.first_name.capitalize %>
-          </div>
-          <%= button_to "Accepter", apply_accepteds_path(apply), remote: true %>
-        <% end %>
-      <% end %>
+
+        <div class="project-card-mission-applies-bootcampers">
+          <% if mission.provided? %>
+            <%= mission.accepted_bootcamper.first_name.capitalize %>
+          <% else %>
+            <% mission.applies.each do |apply| %>
+              <div class="project-card-mission-apply">
+                <%= apply.user.first_name.capitalize %>
+                <%= button_to "Accepter", apply_accepteds_path(apply), remote: true, class: "btn btn-accept-apply" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
 
     </div>
 
