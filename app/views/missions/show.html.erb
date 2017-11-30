@@ -44,7 +44,6 @@
     <div class="card-show-project-infos">
       <h3 class="subtitle-mission"><strong>Contexte du projet :</strong></h3>
       <div><strong>Titre : </strong><%= @mission.project.title %></div>
-      <div><strong>Category : </strong><%= @mission.project.category %></div>
       <div><strong>Budget total : </strong><%= number_with_delimiter( @mission.project.price, delimiter: " ") %> €</div>
     </div>
     <div class="card-show-download">
