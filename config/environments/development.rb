@@ -12,6 +12,8 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  # Tell Rails to serve error pages from the controller instead of static pages from public/
+  config.exceptions_app = self.routes
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
