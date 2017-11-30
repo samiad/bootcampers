@@ -25,6 +25,10 @@
     font-weight: bolder;
   }
 
+  .h1 .text {
+    padding-top: 15px;
+  }
+
   .btn-warning {
     margin-top: 15px;
     border-radius: 5px;
@@ -74,5 +78,19 @@
     background: rgba(112,158,242,0.4);
     border: 1px solid $blue;
     color: $blue;
+  }
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    font-size: 13.5px;
+    font-weight: lighter;
+    color: $lightgray;
+    padding-right: 10px;
+    margin-right: 0px;
+    text-align: right;
   }
 }
