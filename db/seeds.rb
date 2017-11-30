@@ -6,110 +6,152 @@ Project.destroy_all
 Company.destroy_all
 User.destroy_all
 
-print '///Creating 2 Bootcampers...///'
+print '///Creating 1 Bootcamper...///'
 phil = User.create!(
   first_name: "Philippe",
   last_name: "Despreaux",
-  phone_number: "00 00 00 00 00",
+  phone_number: "06 75 84 96 75",
   email: "bootcamper@bootcampers.co",
   password: "bootcamper",
-  bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS.",
   role: 0,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/philippe_kuh8vu.jpg"
   )
 print "👶 "
+print '///Created 1 Bootcamper...///'
 
-sylv = User.create!(
-  first_name: "Sylvain",
-  last_name: "Peigney",
-  phone_number: "55 55 55 55 55",
-  email: "sylvain@bootcampers.co",
-  password: "sylvain",
-  bio: "Je suis developer depuis plus de 10 ans et mes langages de prédilections sont Ruby, HTML et CSS.",
-  role: 0,
-  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/sylvain_lv30rh.jpg"
-  )
-print "👶 "
-print '///Created 2 Bootcampers...///'
-
-print '///Creating 2 Leaders...///'
-aur = User.create!(
-  first_name: "Aurélien",
-  last_name: "Galoppe",
-  phone_number: "10 10 10 10 10",
-  email: "aurelien@bootcampers.co",
-  password: "aurelien",
-  bio: "Je suis developer sur ruby on rails depuis 2 ans et mes langages de prédilections sont Ruby, HTML et CSS. Et je suis leader chez Bootcampers",
-  role: 1,
-  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511530103/aurelien_etlwlw.jpg"
-  )
-print "👶 "
-
+print '///Creating 1 Leader...///'
 samia = User.create!(
   first_name: "Samia",
   last_name: "Dahmouni",
-  phone_number: "11 11 11 11 11",
+  phone_number: "07 85 41 65 92",
   email: "samia@bootcampers.co",
   password: "samiad",
-  bio: "Je suis developer sur ruby on rails depuis 2 mois. J'ai fait le batch #102 du wagon de bordeaux. mes langages de prédilections sont Ruby, HTML et CSS. Et je suis leader chez Bootcampers",
   role: 1,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511957335/IMG_0978_nsbbpb.jpg"
   )
 print "👶 "
-print '///Created 2 Leaders///'
+print '///Created 1 Leader///'
 
-print '///Creating 2 Clients...///'
+print '///Creating 5 Clients...///'
 valentin = User.create!(
   first_name: "Valentin",
   last_name: "Ferron",
-  phone_number: "22 22 22 22 22",
+  phone_number: "06 84 96 71 52",
   email: "valentin@company.co",
   password: "company",
-  bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
   role: 2,
   photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/valentin_mmqlj2.jpg"
   )
 print "👶 "
 
-jo = User.create!(
-  first_name: "Jo",
-  last_name: "Serafini",
-  phone_number: "88 88 88 88 88",
-  email: "jo@company.co",
-  password: "joseraf",
-  bio: "Je suis dirigeant de la Company et j'ai un super projet à faire développer. Je voudrais donc passer par Bootcampers pour mon projet.",
+alex = User.create!(
+  first_name: "Alexandre",
+  last_name: "Boyer",
+  phone_number: "06 84 71 54 85",
+  email: "alexandre@garage.fr",
+  password: "alexandre",
   role: 2,
-  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511530104/jo_u1gep2.png"
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512050824/alex_rmq5j7.jpg"
   )
 print "👶 "
-print '///Created 2 Clients///'
+
+hugues = User.create!(
+  first_name: "Hugues",
+  last_name: "Tonnet",
+  phone_number: "06 83 84 75 15",
+  email: "hugues@flower.fr",
+  password: "hugueto",
+  role: 2,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512050824/hugues_gimwso.jpg"
+  )
+print "👶 "
+
+louis = User.create!(
+  first_name: "Louis",
+  last_name: "Mathé",
+  phone_number: "07 54 98 35 15",
+  email: "louis@coop.fr",
+  password: "louismathe",
+  role: 2,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512050824/louis_xy38vd.png"
+  )
+print "👶 "
+
+reka = User.create!(
+  first_name: "Reka",
+  last_name: "Kulinyi",
+  phone_number: "06 75 84 99 12",
+  email: "reka@rekachef.co",
+  password: "rekakulinyi",
+  role: 2,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512050824/reka_m1r082.jpg"
+  )
+print "👶 "
+print '///Created 5 Client///'
 print "///Users created///"
 
-print '///Creating 2 Companies...///'
-company = Company.create!(
-  name: "Val&Co",
+print '///Creating 5 Companies...///'
+yoga = Company.create!(
+  name: "Yoga & Co",
   address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
   siret: "123 123 132 13205",
   activity_code: "553A",
   vat_number: "123456789TVA",
-  website: "www.company.fr",
+  website: "www.yoga.fr",
   user: valentin,
-  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511358254/val-co_uqcre2.png"
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512056110/meditation_udxtaa.png"
   )
 print "📅 "
 
-jocomp = Company.create!(
-  name: "Jo&Co",
-  address: "107 cours Balguerie Stuttenberg, 33300 Bordeaux",
-  siret: "123 123 155 13205",
-  activity_code: "554A",
-  vat_number: "123478989TVA",
-  website: "www.jocompany.fr",
-  user: jo,
-  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1511530948/jo-co_i3qvf4.png"
+cars = Company.create!(
+  name: "Le Garage",
+  address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
+  siret: "123 333 587 13205",
+  activity_code: "527A",
+  vat_number: "123422555TVA",
+  website: "www.garage.fr",
+  user: alex,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512051951/car_idh1wx.png"
   )
 print "📅 "
-print "///Created Companies///"
+
+flower = Company.create!(
+  name: "Hugues Flower",
+  address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
+  siret: "123 333 999 13205",
+  activity_code: "555A",
+  vat_number: "12342265TVA",
+  website: "www.flower.fr",
+  user: hugues,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512051912/rose_vev0sk.png"
+  )
+print "📅 "
+
+coop = Company.create!(
+  name: "Louis Coop",
+  address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
+  siret: "123 333 989 13205",
+  activity_code: "533A",
+  vat_number: "12346665TVA",
+  website: "www.coop.fr",
+  user: louis,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512051912/watermelon_ckavm5.png"
+  )
+print "📅 "
+
+resto = Company.create!(
+  name: "Reka Chef",
+  address: "120 cours Balguerie Stuttenberg, 33300 Bordeaux",
+  siret: "123 999 989 13205",
+  activity_code: "533B",
+  vat_number: "12999665TVA",
+  website: "www.rekachef.fr",
+  user: reka,
+  photo_url: "http://res.cloudinary.com/samiad/image/upload/v1512051912/food_qmiljf.png"
+  )
+print "📅 "
+print '///Created 5 Companies///'
+print "///Created Company///"
 
 print "///Creating 3 Skills...///"
 javascript = Skill.create!(name: "js", color: "#75A623")
@@ -117,122 +159,91 @@ rails = Skill.create!(name: "rails", color: '#D0021B')
 html_css = Skill.create!(name: "html/css", color: '#709EF2')
 print "///Created Skills///"
 
-print '///Creating 12 Projects...///'
-print '///Creating 6 Projects for Val&Co...///'
+print '///Creating 4 Projects...///'
 
-print '///Creating Project request for VAL...///'
+print '///Creating Project request for reka...///'
 Project.create!(
-  company: company,
-  request_title: "Création d'un site e-commerce / V",
-  request_description:"Je voudrais un site pour vendre des chapeaux mexicains",
-  budget: 3000,
+  company: resto,
+  request_title: "Création d'une application mobile / V",
+  request_description:"Je voudrais une application pour partager les recettes du restaurant",
+  budget: 10000,
   request_delivery_at: DateTime.now + 2.month,
   )
 print "Project request created "
 
-print '///Creating Project accepted for VAL...///'
-Project.create!(
-  company: company,
+print '///Creating Project scoped for Louis with 1 mission...///'
+coopmob = Project.create!(
+  company: coop,
   user: samia,
-  request_title: "Création d'un site / VSam",
-  request_description:"Je voudrais un site pour vendre des chapeaux mexicains",
-  budget: 3000,
-  request_delivery_at: DateTime.now + 2.month,
-  accepted_at: DateTime.now - 1.day
-  )
-print "Project accepted created "
-
-print '///Creating Project scoped for VAL with 2 missions...///'
-appm = Project.create!(
-  company: company,
-  user: aur,
-  request_title: "Création d'une application / VAur",
-  request_description:"Application pour ne pas oublier ses aliments dans le frigo",
+  request_title: "Création d'une application mobile",
+  request_description:"Application pour partager les fruits et légumes de saison",
   budget: 10000,
   request_delivery_at: DateTime.now + 1.month,
   accepted_at: DateTime.now - 1.day,
-  title: "Conception d'une application mobile / VAur",
-  description: "Gestion des aliments et notifications",
+  title: "Conception d'une application mobile",
+  description: "Partage d'un calendrier de fruits et légumes de saison",
   category: "Application Mobile",
-  price_cents: 60000,
+  price_cents: 6000000,
   agreed_delivery_at: DateTime.now + 2.month,
   scoped_at: DateTime.now + 7.day,
   )
 print "Project scoped created "
 
-print "Creating 2 missions project scoped "
-frontappm = Mission.create!(
-  project: appm,
-  title: "Front d'une app mobile",
-  description: "Mission scoped, no applies...........",
-  skills: [html_css, javascript],
-  price: 30000
-  )
-print "📅 "
-
-backappm = Mission.create!(
-  project: appm,
-  title: "Back end d'une app mobile",
-  description: "Mission scoped, no applies..............",
+print "Creating 1 mission project scoped "
+backcoopmob = Mission.create!(
+  project: coopmob,
+  title: "Back App Mobile",
+  description: "Conception du front end en fonction des specs, de la charte et des maquettes graphiques",
   skills: [rails],
   price: 30000
   )
 print "📅 "
-print "Created 2 missions project scoped "
+print "Created 1 mission project scoped "
 
-print '///Creating Project signed_off for VAL with 2 missions...///'
-crm = Project.create!(
-  company: company,
+print '///Creating Project signed_off for alex with 1 mission...///'
+appcar = Project.create!(
+  company: cars,
   user: samia,
-  request_title: "Création d'un CRM / VSam",
-  request_description:"Back office pour gérer nos clients, CA, stats, commerciaux, etc",
-  budget: 50000,
-  request_delivery_at: DateTime.now + 2.month,
+  request_title: "Création d'une site web",
+  request_description:"Site web de réservation pour de la réparation automobile",
+  budget: 10000,
+  request_delivery_at: DateTime.now + 1.month,
   accepted_at: DateTime.now - 1.day,
-  title: "Conception d'un CRM client / VSam",
-  description: "Gestion client, CA, prospection, vente, promotion, communication, commerciaux",
+  title: "Conception d'une application web",
+  description: "Conception d'une application web pour la réservation et la gestion des rdvs",
   category: "Application Web",
-  price_cents: 50000,
+  price_cents: 2000000,
   agreed_delivery_at: DateTime.now + 4.month,
   scoped_at: DateTime.now + 15.day,
   signed_off_at: DateTime.now + 20.day
   )
 print "Project signed_off created "
 
-print "Creating 2 missions project signed_off "
-frontcrm = Mission.create!(
-  project: crm,
-  title: "Front End d'un CRM",
-  description: "Mission signed_off, no applies................",
-  skills: [html_css, javascript],
+print "Creating 1 mission project signed_off "
+fullappcar = Mission.create!(
+  project: appcar,
+  title: "Front/Back App Web",
+  description: "Conception d'une application web pour la réservation et la gestion des rdvs",
+  skills: [html_css, javascript, rails],
   price: 20000
   )
 print "📅 "
-
-backcrm = Mission.create!(
-  project: crm,
-  title: "Back End d'un CRM",
-  description: "Mission signed_off, no applies..................",
-  skills: [rails],
-  price: 30000
-  )
-print "📅 "
-print "Created 2 missions project signed_off "
+print "Created 1 mission project signed_off "
 
 
-print '///Creating Project delivered_at for VAL with 2 missions and 4 applies...///'
-appw = Project.create!(
-  company: company,
-  user: aur,
-  request_title: "Création d'une application web / VAur",
-  request_description:"Application web permettant de nettoyer notre empreinte carbone",
+print '///Creating Project delivered_at for Reka with 1 mission and 1 apply...///'
+appwresto = Project.create!(
+  company: resto,
+  user: samia,
+  request_title: "Création d'un site web",
+  request_description:"Site vitrine pour parler du restaurant avec un blog",
   budget: 20000,
   request_delivery_at: DateTime.now + 1.month,
   accepted_at: DateTime.now - 1.day,
-  title: "Conception d'une Application Web / VAur",
-  description: "Application web permettant de nettoyer notre empreinte carbone",
+  title: "Conception d'une application web",
+  description: "Application web vitrine pour un restaurant. Intégration d'un blog et d'un back-office admin",
   category: "Application Web",
-  price_cents: 30000,
+  price_cents: 1000000,
   agreed_delivery_at: DateTime.now + 2.month,
   scoped_at: DateTime.now + 7.day,
   signed_off_at: DateTime.now + 10.day,
@@ -240,69 +251,39 @@ appw = Project.create!(
   )
 print "Project delivered_at created "
 
-print "Creating 2 missions project delivered_at "
-frontappw = Mission.create!(
-  project: appw,
-  title: "Front End d'une application web",
-  description: "Mission delivered................",
-  skills: [html_css, javascript],
-  price: 12000
+print "Creating 1 missions project delivered_at "
+fullappwresto = Mission.create!(
+  project: appwresto,
+  title: "Front/Back App Web",
+  description: "Application web vitrine pour un restaurant. Intégration d'un blog et d'un back-office admin",
+  skills: [html_css, javascript, rails],
+  price: 20000
   )
 print "📅 "
+print "Created 1 mission project delivered_at "
 
-backappw = Mission.create!(
-  project: appw,
-  title: "Back End d'une application web",
-  description: "Mission delivered................",
-  skills: [rails],
-  price: 18000
-  )
-print "📅 "
-print "Created 2 missions project delivered_at "
-
-print "Creating 4 applies project delivered_at "
+print "Creating 1 apply project delivered_at "
 accepted = Apply.create!(
-  user: sylv,
-  mission: frontappw,
+  user: phil,
+  mission: fullappwresto,
   accepted_at: DateTime.now + 5.day
   )
 print "📅 "
+print "Created 1 apply project delivered_at "
 
-refused = Apply.create!(
-  user: phil,
-  mission: frontappw,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: phil,
-  mission: backappw,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: sylv,
-  mission: backappw,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-print "Created 4 applies project delivered_at "
-
-print '///Creating Project paid_off for VAL with 2 missions and 4 applies...///'
-plat = Project.create!(
-  company: company,
+print '///Creating Project paid_off for hugues with 1 mission and 1 apply...///'
+ecomflower = Project.create!(
+  company: flower,
   user: samia,
-  request_title: "Création d'une plateforme / VSam",
-  request_description:"plateforme permettant de trouver des lieux sympa où aller",
+  request_title: "Création d'un boutique e-commerce",
+  request_description:"Je souhaiterai vendre des bouquets de roses personnalisées",
   budget: 20000,
   request_delivery_at: DateTime.now + 1.month,
   accepted_at: DateTime.now - 1.day,
-  title: "Conception d'une Application Web / VSam",
-  description: "Plateforme permettant d'indiquer des spots liké par des influenceurs et amis",
-  category: "Application Web",
-  price_cents: 30000,
+  title: "Conception d'un e-shop",
+  description: "E-shop de vente de bouquets de roses personnalisées. Personnalisation de l'expérience",
+  category: "Application E-commerce",
+  price_cents: 3000000,
   agreed_delivery_at: DateTime.now + 2.month,
   scoped_at: DateTime.now + 4.day,
   signed_off_at: DateTime.now + 10.day,
@@ -311,349 +292,23 @@ plat = Project.create!(
   )
 print "Project paid_off created "
 
-print "Creating 2 missions project paid_off "
-frontplat = Mission.create!(
-  project: plat,
-  title: "Front End d'une application web",
-  description: "Mission paid_off................",
+print "Creating 1 mission project paid_off "
+appecomflower = Mission.create!(
+  project: ecomflower,
+  title: "Front End App Web",
+  description: "Conception du front d'un e-shop de vente de bouquets de roses personnalisées. Personnalisation de l'expérience",
   skills: [html_css, javascript],
   price: 12000
   )
 print "📅 "
+print "Created 1 mission project paid_off "
 
-backplat = Mission.create!(
-  project: plat,
-  title: "Back End d'une application web",
-  description: "Mission paid_off....................",
-  skills: [rails],
-  price: 18000
-  )
-print "📅 "
-print "Created 2 missions project paid_off "
-
-print "Creating 4 applies project paid_off "
+print "Creating 1 apply project paid_off "
 accepted = Apply.create!(
   user: phil,
-  mission: frontplat,
+  mission: appecomflower,
   accepted_at: DateTime.now + 5.day
   )
 print "📅 "
-
-refused = Apply.create!(
-  user: sylv,
-  mission: frontplat,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: sylv,
-  mission: backplat,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: phil,
-  mission: backplat,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-print "Created 4 applies project paid_off "
-print '///Created 6 Projects for Val&Co...///'
-
-
-print '///Creating 6 Projects for Jo&Co...///'
-print '///Creating Project request for JO...///'
-Project.create!(
-  company: jocomp,
-  request_title: "Création d'un site / J",
-  request_description:"Je voudrais un site pour vendre des chapeaux mexicains",
-  budget: 3000,
-  request_delivery_at: DateTime.now + 2.month,
-  )
-print "Project request created "
-
-print '///Creating Project accepted for JO...///'
-Project.create!(
-  company: jocomp,
-  user: aur,
-  request_title: "Création d'un site / JAur",
-  request_description:"Je voudrais un site pour vendre des chapeaux mexicains",
-  budget: 3000,
-  request_delivery_at: DateTime.now + 2.month,
-  accepted_at: DateTime.now - 1.day
-  )
-print "Project accepted created "
-
-print '///Creating Project scoped for JO with 2 missions...///'
-appmjo = Project.create!(
-  company: jocomp,
-  user: samia,
-  request_title: "Création d'une application / JSam",
-  request_description:"Application pour ne pas oublier ses aliments dans le frigo",
-  budget: 10000,
-  request_delivery_at: DateTime.now + 1.month,
-  accepted_at: DateTime.now - 1.day,
-  title: "Conception d'une application mobile / JSam",
-  description: "Gestion des aliments et notifications",
-  category: "Application Mobile",
-  price_cents: 60000,
-  agreed_delivery_at: DateTime.now + 2.month,
-  scoped_at: DateTime.now + 7.day,
-  )
-print "Project scoped created "
-
-print "Creating 2 missions project scoped "
-frontappmjo = Mission.create!(
-  project: appmjo,
-  title: "Front d'une app mobile",
-  description: "Mission scoped, no applies...........",
-  skills: [html_css, javascript],
-  price: 30000
-  )
-print "📅 "
-
-backappmjo = Mission.create!(
-  project: appmjo,
-  title: "Back end d'une app mobile",
-  description: "Mission scoped, no applies.................",
-  skills: [rails],
-  price: 30000
-  )
-print "📅 "
-print "Created 2 missions project scoped "
-
-print '///Creating Project signed_off for JO with 3 missions and 4 applies...///'
-crmjo = Project.create!(
-  company: jocomp,
-  user: aur,
-  request_title: "Création d'un CRM / JAur",
-  request_description:"Back office pour gérer nos clients, CA, stats, commerciaux, etc",
-  budget: 50000,
-  request_delivery_at: DateTime.now + 2.month,
-  accepted_at: DateTime.now - 1.day,
-  title: "Conception d'un CRM client / JAur",
-  description: "Gestion client, CA, prospection, vente, promotion, communication, commerciaux",
-  category: "Application Web",
-  price_cents: 50000,
-  agreed_delivery_at: DateTime.now + 4.month,
-  scoped_at: DateTime.now + 15.day,
-  signed_off_at: DateTime.now + 20.day
-  )
-print "Project signed_off created "
-
-print "Creating 3 missions project signed_off "
-frontcrmjo = Mission.create!(
-  project: crmjo,
-  title: "Front End d'un CRM",
-  description: "Mission signed_off, with applies pending for S&P",
-  skills: [html_css, javascript],
-  price: 15000
-  )
-print "📅 "
-
-backcrmjo = Mission.create!(
-  project: crmjo,
-  title: "Back End d'un CRM",
-  description: "Mission signed_off, with applies accepted for P and refused for S",
-  skills: [rails],
-  price: 20000
-  )
-print "📅 "
-
-jscrmjo = Mission.create!(
-  project: crmjo,
-  title: "Back End d'un CRM",
-  description: "Mission signed_off, with applies accepted for S and refused for P",
-  skills: [javascript],
-  price: 15000
-  )
-print "📅 "
-print "Created 3 missions project signed_off "
-
-print "Creating 6 applies project signed_off "
-pending = Apply.create!(
-  user: phil,
-  mission: frontcrmjo,
-  )
-print "📅 "
-
-pending = Apply.create!(
-  user: sylv,
-  mission: frontcrmjo,
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: phil,
-  mission: backcrmjo,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: sylv,
-  mission: backcrmjo,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: sylv,
-  mission: jscrmjo,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: phil,
-  mission: jscrmjo,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-print "Created 6 applies project signed_off "
-
-print '///Creating Project delivered_at for JO with 2 missions and 4 applies...///'
-appwjo = Project.create!(
-  company: jocomp,
-  user: samia,
-  request_title: "Création d'une application web / JSam",
-  request_description:"Application web permettant de nettoyer notre empreinte carbone",
-  budget: 20000,
-  request_delivery_at: DateTime.now + 1.month,
-  accepted_at: DateTime.now - 1.day,
-  title: "Conception d'une Application Web / JSam",
-  description: "Application web permettant de nettoyer notre empreinte carbone",
-  category: "Application Web",
-  price_cents: 30000,
-  agreed_delivery_at: DateTime.now + 2.month,
-  scoped_at: DateTime.now + 7.day,
-  signed_off_at: DateTime.now + 10.day,
-  delivered_at: DateTime.now + 2.month,
-  )
-print "Project delivered_at created "
-
-print "Creating 2 missions project delivered_at "
-frontappwjo = Mission.create!(
-  project: appwjo,
-  title: "Front End d'une application web",
-  description: "Mission delivered......................",
-  skills: [html_css, javascript],
-  price: 12000
-  )
-print "📅 "
-
-backappwjo = Mission.create!(
-  project: appwjo,
-  title: "Back End d'une application web",
-  description: "Mission delivered...........................",
-  skills: [rails],
-  price: 18000
-  )
-print "📅 "
-print "Created 2 missions project delivered_at "
-
-print "Creating 4 applies project delivered_at "
-accepted = Apply.create!(
-  user: sylv,
-  mission: frontappwjo,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: phil,
-  mission: frontappwjo,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: phil,
-  mission: backappwjo,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: sylv,
-  mission: backappwjo,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-print "Created 4 applies project delivered_at "
-
-print '///Creating Project paid_off for JO with 2 missions and 4 applies...///'
-platjo = Project.create!(
-  company: jocomp,
-  user: aur,
-  request_title: "Création d'une plateforme / JAur",
-  request_description:"plateforme permettant de trouver des lieux sympa où aller",
-  budget: 20000,
-  request_delivery_at: DateTime.now + 1.month,
-  accepted_at: DateTime.now - 1.day,
-  title: "Conception d'une Application Web / JAur",
-  description: "Plateforme permettant d'indiquer des spots liké par des influenceurs et amis",
-  category: "Application Web",
-  price_cents: 30000,
-  agreed_delivery_at: DateTime.now + 2.month,
-  scoped_at: DateTime.now + 4.day,
-  signed_off_at: DateTime.now + 10.day,
-  delivered_at: DateTime.now + 2.month,
-  paid_off_at: DateTime.now + 2.month + 10.day
-  )
-print "Project paid_off created "
-
-print "Creating 2 missions project paid_off "
-frontplatjo = Mission.create!(
-  project: platjo,
-  title: "Front End d'une application web",
-  description: "Mission paid_off.....................",
-  skills: [html_css, javascript],
-  price: 12000
-  )
-print "📅 "
-
-backplatjo = Mission.create!(
-  project: platjo,
-  title: "Back End d'une application web",
-  description: "Mission paid_off....................",
-  skills: [rails],
-  price: 18000
-  )
-print "📅 "
-print "Created 2 missions project paid_off "
-
-print "Creating 4 applies project paid_off "
-accepted = Apply.create!(
-  user: phil,
-  mission: frontplatjo,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: sylv,
-  mission: frontplatjo,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-accepted = Apply.create!(
-  user: sylv,
-  mission: backplatjo,
-  accepted_at: DateTime.now + 5.day
-  )
-print "📅 "
-
-refused = Apply.create!(
-  user: phil,
-  mission: backplatjo,
-  declined_at: DateTime.now + 5.day
-  )
-print "📅 "
-print "Created 4 applies project paid_off "
-print '///Created 6 Projects for Jo&Co...///'
-
-print "///Projects created///"
+print "Created 1 apply project paid_off "
+print '///Created 4 Projects...///'
