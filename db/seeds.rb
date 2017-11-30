@@ -164,7 +164,7 @@ print '///Creating 4 Projects...///'
 print '///Creating Project request for reka...///'
 Project.create!(
   company: resto,
-  request_title: "Création d'une application mobile / V",
+  request_title: "Création d'une application mobile",
   request_description:"Je voudrais une application pour partager les recettes du restaurant",
   budget: 10000,
   request_delivery_at: DateTime.now + 2.month,
