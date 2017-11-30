@@ -107,33 +107,80 @@
 
   .project_missions_skills {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 25px;
+    margin-bottom: 15px;
 
-    .checkbox {
-      margin-top: 0px;
-      margin-bottom: 0px;
+    .skills-choiceJS {
       color: #cccccc;
       background: transparent;
-      padding: 15px;
+      padding: 12px 28px;
+      border-radius: 5px;
+      border: 1px solid #e8e8e8;
+      font-size: 14px;
+      text-align: center;
+      &:hover {
+        background: rgba(117,166,35,0.1);
+        border: 1px solid rgba(117,166,35,0.6);
+        color: rgba(117,166,35,0.6);
+        cursor: pointer;
+      }
+      &.active {
+        background: rgba(117,166,35,0.4);
+        border: 1px solid rgba(117,166,35,0.6);
+        color: rgba(117,166,35,0.6);
+      }
+    }
+
+    .skills-choiceRAILS {
+      color: #cccccc;
+      background: transparent;
+      padding: 12px 22px;
+      border-radius: 5px;
+      border: 1px solid #e8e8e8;
+      font-size: 14px;
+      text-align: center;
+      &:hover {
+        background: rgba(208,2,27,0.1);
+        border: 1px solid rgba(208,2,27,0.6);
+        color: rgba(208,2,27,0.6);
+        cursor: pointer;
+      }
+      &.active {
+        background: rgba(208,2,27,0.4);
+        border: 1px solid rgba(208,2,27,0.6);
+        color: rgba(208,2,27,0.6);
+      }
+    }
+
+    .skills-choiceHTML {
+      color: #cccccc;
+      background: transparent;
+      padding: 12px;
       border-radius: 5px;
       border: 1px solid #e8e8e8;
       font-size: 14px;
       text-align: center;
       &:hover {
         background: rgba(112,158,242,0.1);
-        border: 1px solid $blue;
-        color: $blue;
+        border: 1px solid rgba(112,158,242,0.6);
+        color: rgba(112,158,242,0.6);
         cursor: pointer;
       }
       &.active {
         background: rgba(112,158,242,0.4);
-        border: 1px solid $blue;
-        color: $blue;
+        border: 1px solid rgba(112,158,242,0.6);
+        color: rgba(112,158,242,0.6);
       }
     }
   }
+}
 
 
+
+
+.skills-choice.active {
+  background-color: pink;
 }
