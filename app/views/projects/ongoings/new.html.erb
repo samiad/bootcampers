@@ -6,7 +6,6 @@
         <%= simple_form_for @project, url: project_ongoings_path(@project), method: :post do |p| %>
           <%= p.input :title, label: "Titre choisi par l'entreprise :", placeholder: @project.request_title %>
           <%= p.input :description, label: "Description choisie par l'entreprise :", placeholder: @project.request_description %>
-          <%= p.input :category, label: "Catégorie de la mission :" %>
           <%= p.input :price, label: "Montant estimé de la mission :", placeholder: @project.budget %>
           <div class="form-project-ongoing-date">
             Date de livraison demandée : <b><%= @project.request_delivery_at.strftime("%d.%m.%Y") %></b>
