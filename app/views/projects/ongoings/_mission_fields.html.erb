@@ -3,10 +3,24 @@
   <%= f.input :title, label: false, placeholder: "Titre de la nouvelle mission" %>
   <%= f.input :description, label: false, placeholder: "Description de la nouvelle mission" %>
   <%= f.input :price, label: false, placeholder: "Rémunération" %>
+    <!-- Fake checkbox skills -->
+    <!-- <div class="skills-choice">
+      <%= f.association :skills, as: :check_boxes, label: false %>
+    </div> -->
 
-  <div class="skills-choice">
-    <%= f.association :skills, as: :check_boxes, label: false %>
-  </div>
+  <div class="collection-check-boxes">
+    <%= f.collection_check_boxes :skill_ids, Skill.all, :id, :name do |input| %>
+      <label>
+        <%= input.check_box %>
+          <div class="check-box">
+            <i class="fa fa-check-square-o checked" aria-hidden="true"></i>
+            <i class="fa fa-square-o unchecked" aria-hidden="true"></i>
+            <%= input.text %>
+          </div>
+      </label>
+  <% end %>
+</div>
+
 
   <%#= f.check_box :_destroy %>
   <div class="text-align">
