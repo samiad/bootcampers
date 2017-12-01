@@ -1,12 +1,13 @@
-<div class="container">
-  <div class="banner" style='background-image: url("https://10up.com/wp-content/themes/10up-sept2016/assets/img/404.png")'>
-    <h2>Oops, il semble que cette page n'existe pas</h2>
-    <div class="banner-404">
-      <p>3 solutions s'offrent à vous:</p>
-      <p>a. Revenir à la page précédente et nous appeler pour nous mettre misère</p>
-      <p>b. Rester sur cette page et nous appeler pour nous mettre misère</p>
-      <p>c. Aller sur un site qui ne plante pas</p>
-      <h3>Si vous choisissez a ou b, vous aurez droit à notre reconnaissance éternelle!</h3>
+<div class="wrapper">
+  <div class="page-error-logo">
+    <%= image_tag "blue-logo.png" %>
+  </div>
+  <div class="page-error">
+    <div class="page-404">
+      <div class="title-404">Cette page n'existe pas</div>
+      <div class="btn btn-error"><%= link_to "Retour vers la page d'accueil", root_path %>
+      </div>
     </div>
   </div>
 </div>
+
