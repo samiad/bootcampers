@@ -50,28 +50,59 @@
   }
 }
 
-.banner-404 {
-  margin-top: 25vh;
-  text-align: left;
-  p {
-    color: $white;
-    font-size: 16px;
-    padding: 0px;
-    margin-bottom: 10px;
-  }
-  h3 {
-    color: $white;
-    font-weight: bolder;
-    font-size: 18px;
-  }
+
+
+.page-error-logo {
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
-.banner-500 {
-  margin-top: 25vh;
-  text-align: left;
-  h3 {
-    color: $lightorange;
-    font-weight: bolder;
-    font-size: 18px;
-  }
+.page-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 230px;
 }
+
+.page-404, .page-500 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title-404, .title-500 {
+  color: $gray;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.btn-error {
+  background-color: $blue;
+  border-radius: 50px;
+  padding: 5px 15px;
+  color: $white;
+  font-weight: bolder;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+
+.btn-error:hover {
+  opacity: 0.8;
+  color: $white;
+  box-shadow: 2px 2px 2px $lightgray;
+}
+
+.page-error a {
+    text-decoration: none;
+    color: $white;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+    &:focus {
+      text-decoration: none;
+      color: $white;
+    }
+  }

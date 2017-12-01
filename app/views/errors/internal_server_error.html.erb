@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="banner" style='background-image: url("http://3.bp.blogspot.com/-JvktxDULzdA/UWXgQCWSkpI/AAAAAAAAATc/bt1ClP6t5n4/s1600/Works.jpg")'>
-    <h2>Aïe, le serveur ne répond pas comme il faut</h2>
-    <div class="banner-500">
-      <h3>Mais rassurez-vous,<h3>
-      <h3>l'erreur va dans notre log</h3>
-      <h3>d'ailleurs nous sommes déjà sur le sujet!</h3>
-      <%= link_to "Retour à la page d'accueil", root_path, class: "btn btn-warning" %>
+<div class="wrapper">
+  <div class="page-error-logo">
+    <%= image_tag "blue-logo.png" %>
+  </div>
+  <div class="page-error">
+    <div class="page-500">
+      <div class="title-500">Une erreur est survenue, veuillez nous excuser de la gêne occasionnée</div>
+      <div class="btn btn-error"><%= link_to "Retour vers la page d'accueil", root_path %>
+      </div>
     </div>
   </div>
 </div>
+
