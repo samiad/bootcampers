@@ -103,6 +103,60 @@
 
   .skills-choice {
     display: flex;
+
+    .skills-choiceJS {
+      color: rgb(160,160,160);
+      font-weight: bolder;
+      &:hover {
+        color: #75A623;
+        cursor: pointer;
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked + label {
+        color: #75A623;
+        font-weight: bolder;
+      }
+    }
+
+    .skills-choiceRAILS {
+      color: rgb(160,160,160);
+      font-weight: bolder;
+      &:hover {
+        color: #D0021B;
+        cursor: pointer;
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked + label {
+        color: #D0021B;
+        font-weight: bolder;
+      }
+    }
+
+    .skills-choiceHTML {
+      color: rgb(160,160,160);
+      font-weight: bolder;
+      &:hover {
+        color: #709EF2;
+        cursor: pointer;
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked + label {
+        color: #709EF2;
+        font-weight: bolder;
+      }
+    }
   }
 
   .project_missions_skills {
@@ -111,76 +165,89 @@
     align-items: center;
     width: 100%;
     margin-top: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 
-    .skills-choiceJS {
-      color: #cccccc;
-      background: transparent;
-      padding: 12px 28px;
-      border-radius: 5px;
-      border: 1px solid #e8e8e8;
+    h3 {
+      color: rgb(160,160,160);
       font-size: 14px;
-      text-align: center;
-      &:hover {
-        background: rgba(117,166,35,0.1);
-        border: 1px solid rgba(117,166,35,0.6);
-        color: rgba(117,166,35,0.6);
-        cursor: pointer;
-      }
-      &.active {
-        background: rgba(117,166,35,0.4);
-        border: 1px solid rgba(117,166,35,0.6);
-        color: rgba(117,166,35,0.6);
-      }
+      font-weight: lighter;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
-    .skills-choiceRAILS {
-      color: #cccccc;
-      background: transparent;
-      padding: 12px 22px;
-      border-radius: 5px;
-      border: 1px solid #e8e8e8;
-      font-size: 14px;
-      text-align: center;
-      &:hover {
-        background: rgba(208,2,27,0.1);
-        border: 1px solid rgba(208,2,27,0.6);
-        color: rgba(208,2,27,0.6);
-        cursor: pointer;
-      }
-      &.active {
-        background: rgba(208,2,27,0.4);
-        border: 1px solid rgba(208,2,27,0.6);
-        color: rgba(208,2,27,0.6);
-      }
-    }
-
-    .skills-choiceHTML {
-      color: #cccccc;
-      background: transparent;
-      padding: 12px;
-      border-radius: 5px;
-      border: 1px solid #e8e8e8;
-      font-size: 14px;
-      text-align: center;
-      &:hover {
-        background: rgba(112,158,242,0.1);
-        border: 1px solid rgba(112,158,242,0.6);
-        color: rgba(112,158,242,0.6);
-        cursor: pointer;
-      }
-      &.active {
-        background: rgba(112,158,242,0.4);
-        border: 1px solid rgba(112,158,242,0.6);
-        color: rgba(112,158,242,0.6);
-      }
+    label {
+      margin-bottom: 0;
     }
   }
 }
 
+// .collection-check-boxes {
+//   display: flex;
+//   justify-content: space-between;
 
+  // input[type="checkbox"] {
+  //   // display: none;
+  // }
+  //
+  // .check-box:checked + label {
+  //   color: #D0021B;
+  //   font-weight: bolder;
+  // }
+  //
+  // input[type="checkbox"]:checked + label {
+  //   color: #D0021B;
+  //   font-weight: bolder;
+  // }
 
+//   .check-box {
+//     color: rgb(160,160,160);
+//     font-weight: bolder;
+//     &:hover {
+//       color: #D0021B;
+//       cursor: pointer;
+//     }
+//
+//     input {
+//       // display: none;
+//     }
+//
+//     input:checked + label {
+//       color: #D0021B;
+//       font-weight: bolder;
+//     }
+//   }
+// }
 
-.skills-choice.active {
-  background-color: pink;
+.collection-check-boxes {
+  display: flex;
+  flex: 0 0 30%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 18px;
+
+  input, .checked  {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+  }
+  .check-box {
+    background: rgb(220,220,220);
+    border-radius: 3px;
+    padding: 6px 10px;
+    color: white;
+    margin: 5px;
+    font-weight: normal;
+  }
+
+  input:checked + .check-box .checked {
+    display: inline;
+  }
+  input:checked + .check-box .unchecked {
+    display: none;
+  }
+  input:checked + .check-box {
+    background: $green;
+  }
 }
