@@ -1,6 +1,6 @@
 <div class="container">
-  <h1 class="projects-title">Projets en cours</h1>
-  <% @projects.each do |project| %>
+  <h1 class="projects-title">Projets</h1>
+  <% @projects.reverse.each do |project| %>
     <%= render "projects/status/#{project.status[:slug]}", project: project %>
   <% end %>
 </div>

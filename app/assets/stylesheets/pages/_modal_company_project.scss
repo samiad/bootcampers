@@ -21,11 +21,26 @@
   display: flex;
   align-items : center;
   justify-content: center;
+  position: relative;
 }
 
 .company-project-modal-infos {
   color: $gray;
   margin: 20px;
+}
+
+.cpmt-close-btn {
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: $white;
+  opacity: 1;
+}
+
+.cpmt-close-btn:hover {
+  color: $gray;
+  opacity: 0.5;
 }
 
 .cpmt-title {

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # Routes for error pages
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
+
   mount Attachinary::Engine => "/attachinary"
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'

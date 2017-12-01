@@ -1,0 +1,28 @@
+<div class="project-card-mission">
+
+  <div class="project-card-mission-title">
+    <div><%= mission.title %></div>
+  </div>
+
+  <div class="project-card-mission-content">
+
+    <div class="project-card-mission-description">
+      <%= mission.description %>
+    </div>
+
+    <div class="project-card-mission-price">
+      <strong>Prix : </strong><%= number_with_delimiter( mission.price, delimiter: " ") %> €
+    </div>
+
+    <div class="project-card-mission-skills">
+      <div class="project-card-mission-skills-title"><strong>Skills : </strong></div>
+      <% mission.skills.each do |skill| %>
+        <div class="project-card-mission-skill" style="color: <%= skill.color %>">
+          <%= skill.name.upcase %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

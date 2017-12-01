@@ -8,6 +8,12 @@
   top: 0;
   width: 100%;
   z-index: 1;
+  margin-left: 50px;
+}
+
+.searchbar-title {
+  color: $gray;
+  font-size: 16px;
 }
 
 .searchbar-skills-styled-select {

@@ -21,6 +21,21 @@
   display: flex;
   align-items : center;
   justify-content: center;
+  position: relative;
+}
+
+.mpmt-close-btn {
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: $white;
+  opacity: 1;
+}
+
+.mpmt-close-btn:hover {
+  color: $gray;
+  opacity: 0.5;
 }
 
 .manager-project-modal-infos {
@@ -57,13 +72,15 @@
   margin-top: 40px;
   margin-bottom: 20px;
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 20px;
+  color: $gray;
 }
 
 .mpm-company-infos {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $gray;
 }
 
 .mpm-company-avatar {

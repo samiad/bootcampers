@@ -38,6 +38,10 @@
   transform: scale(1.05);
 }
 
+.card-manager-project:focus {
+    outline: none;
+  }
+
 
 .manager-backg-status {
   border-radius: 5px 0px 0px 5px;

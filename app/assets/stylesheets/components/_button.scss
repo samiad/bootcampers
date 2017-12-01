@@ -237,4 +237,22 @@
     -o-border-radius: 4px!important;
     border-radius: 40px!important;
   }
+ }
+
+/*button livrer un projet */
+.btn-accept-apply {
+  background-color: $orange;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 3px 10px;
+  color: white;
+  font-weight: bolder;
+  transition: 0.2s ease-out;
+  font-size: 12px;
+}
+
+.btn-accept-apply:hover {
+  opacity: 0.8;
+  color: $white;
+  box-shadow: 2px 2px 2px $lightgray;
 }

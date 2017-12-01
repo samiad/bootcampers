@@ -1,13 +1,13 @@
 <div class="container">
   <h1 class="projects-title">Demandes de projet</h1>
-  <% @requests.each do |request| %>
+  <% @requests.reverse.each do |request| %>
 
   <div class="card-leader-request">
     <div class="lr-company-infos">
       <% if request.company.photo? %>
-        <%= cl_image_tag request.company.photo.path, width: 80, height: 80, crop: :fill, class: "company-avatar" %>
+        <%= cl_image_tag request.company.photo.path, width: 50, height: 50, crop: :fill, class: "company-avatar" %>
       <% else %>
-        <% avatar_url = "http://placehold.it/80x80" %>
+        <% avatar_url = "http://placehold.it/50x50" %>
         <%= image_tag avatar_url, class: "company-avatar" %>
       <% end %>
       <div><strong><%= request.company.name %></strong></div>

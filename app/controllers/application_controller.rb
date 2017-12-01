@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def set_sign_up_role
     session[:role] = params[:as] if params[:as]
   end
-  
+
   def after_sign_in_path_for(resource)
     if resource.bootcamper?
       missions_path
@@ -17,5 +17,9 @@ class ApplicationController < ActionController::Base
       projects_path
     end
   end
-  
+
+  def default_url_options
+    { host: ENV['HOST'] || 'localhost:3000' }
+  end
+
 end

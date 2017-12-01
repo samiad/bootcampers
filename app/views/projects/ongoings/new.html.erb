@@ -3,7 +3,6 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-project-ongoing">
         <h1>Publier un projet</h1>
-
         <%= simple_form_for @project, url: project_ongoings_path(@project), method: :post do |p| %>
           <%= p.input :title, label: "Titre choisi par l'entreprise :", placeholder: @project.request_title %>
           <%= p.input :description, label: "Description choisie par l'entreprise :", placeholder: @project.request_description %>

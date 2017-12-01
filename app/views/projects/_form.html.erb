@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-project">
-        <h1>Publiez une mission</h1>
+        <h1>Publiez votre projet</h1>
         <%= simple_form_for @project do |p| %>
           <% if @company.persisted? %>
-            <h2>Votre entreprise est : <%= @company.name %></h2>
+            <h2 class="company-title text-center"><%= @company.name.upcase %></h2>
           <% else %>
             <%= p.simple_fields_for @company do |c| %>
               <h2>Informations concernant votre entreprise :</h2>
@@ -13,13 +13,12 @@
               <%= c.input :siret, label: false, placeholder: "SIRET" %>
               <%= c.input :vat_number, label: false, placeholder: "Numéro de TVA" %>
               <%= c.input :address, label: false, placeholder: "Adresse complète" %>
-              <%= c.input :activity_code, label: false, placeholder: "Nom de votre entreprise" %>
+              <%= c.input :activity_code, label: false, placeholder: "Code NAF" %>
               <%= c.input :website, label: false, placeholder: "Site internet de votre entreprise" %>
             <% end  %>
           <% end  %>
-          <h2>Votre projet :</h2>
           <%= p.input :request_title, placeholder: "Création d'un site web", label: false, placeholder: "Titre de votre projet" %>
-          <%= p.input :request_description, placeholder: "Site responsive...", label: false, placeholder: "Description de votre projet"%>
+          <%= p.input :request_description, placeholder: "Site responsive...", label: false, placeholder: "Description de votre projet" %>
 
           <!-- Fake checkbox for category -->
           <div class="form-group boolean optional project_landing_page">
@@ -52,11 +51,12 @@
             </div>
           </div>
           <!-- Fin des fake checkbox -->
-
-          <%= p.input :budget, label: false, placeholder: "Votre budget" %>
-          <h3>Date de livraison souhaitée :</h3>
-          <%= p.input :request_delivery_at, label: false %>
-          <%= p.submit "Publier la mission", class: "btn btn-warning" %>
+          <div class="split">
+            <%= p.input :budget, label: false, placeholder: "Votre budget" %>
+            <p>Date de livraison souhaitée :</p>
+            <%= p.input :request_delivery_at, label: false, as: :string, input_html: { data: { provide: 'datepicker' } } %>
+          </div>
+          <%= p.submit "Publier le projet", class: "btn btn-warning" %>
         <% end %>
       </div>
     </div>

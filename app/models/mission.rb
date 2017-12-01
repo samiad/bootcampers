@@ -6,13 +6,9 @@ class Mission < ApplicationRecord
   has_many :mission_skills
   has_many :skills, through: :mission_skills
 
-  validates :title, presence: true
-  validates :description, presence: true, length: {minimum: 20}
-  validates :price, presence: true
-
-
-
-
+  # validates :title, presence: true
+  # validates :description, presence: true, length: {minimum: 20}
+  # validates :price, presence: true
 
   scope :no_apply, -> { includes(:applies).where(applies: { id: nil}) }
   scope :pending, -> { includes(:applies).where(applies: { accepted_at: nil, declined_at: nil })
@@ -25,7 +21,15 @@ class Mission < ApplicationRecord
   scope :paid_off, -> { joins(:project).where.not(projects: {paid_off_at: nil}) }
   scope :not_paid_off, -> { joins(:project).where(projects: {paid_off_at: nil}) }
 
-
   scope :signed, -> { joins(:project).where.not(projects: {signed_off_at: nil}) }
+
+  def provided?
+    applies.where.not(applies: {accepted_at: nil}).any?
+  end
+
+  def accepted_bootcamper
+    return nil unless provided?
+    applies.where.not(applies: {accepted_at: nil}).first.user
+  end
 
 end

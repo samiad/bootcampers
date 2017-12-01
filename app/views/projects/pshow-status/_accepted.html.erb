@@ -1,6 +1,9 @@
 <div class="manager-project-modal-title" style="background-color: <%= @project.status[:color] %>">
   <div class="mpmt-title"><%= @project.request_title %></div>
+  <button type="button" class="close mpmt-close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
+
+
 <div class="manager-project-modal-infos">
   <div class="mpm-details">
     <div class="mpm-description">
