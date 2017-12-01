@@ -33,7 +33,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Espace Bootcamper"), new_user_session_path(as: :bootcamper), class: "navbar-home-item navbar-home-link" %>
+      <%= link_to t(".sign_in", default: "Espace Développeur"), new_user_session_path(as: :bootcamper), class: "navbar-home-item navbar-home-link" %>
       <%= link_to "Espace entreprise", new_user_session_path(as: :client), class: "navbar-home-item btn-publish" %>
     <% end %>
   </div>
