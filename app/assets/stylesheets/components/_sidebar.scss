@@ -3,9 +3,15 @@
   box-shadow: 9px 10px 20px -10px rgba(50, 50, 50, 0.2);
 }
 
-.sidebar-logo img {
-  height: 50px;
-  margin-top: 10px;
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+
+  #brand-logo {
+    height: 50px;
+    margin-top: 10px;
+    width: 85%;
+  }
 }
 
 .background_blue {
